@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Hand</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f9f5f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            min-height: 100vh;
+            background-image: url('background.png');
+            background-repeat: repeat;
+            background-size: auto;
+            background-position: top left;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+            gap: 1; /* Removes spacing between buttons */
+        }
+        
+        .control {
+            padding: 5px 10px; /* Reduces padding for smaller buttons */
+            font-size: 0.9rem; /* Adjusts font size for smaller text */
+            border-radius: 3px; /* Slightly less rounded corners */
+            margin: 0; /* Removes any margin between buttons */
+        }
+
+        select, button {
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            padding: 10px;
+            border: 2px solid #6A3F47;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #AF6A59;
+            color: white;
+            font-weight: bold;
+        }
+
+        .hand {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+            border: 3px solid #6A3F47;
+            border-radius: 10px;
+            background-color: #fff;
+            max-width: 90%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card {
+            position: relative;
+            width: 150px;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, z-index 0.3s;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-label {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .card.fullscreen {
+            position: fixed;
+            top: 20%; 
+            left: 50%;
+            transform: translate(-50%, -0) scale(2); /* Remove vertical adjustment */
+            z-index: 1000;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-qr {
+            display: flex;
+            align-items: center; /* Vertically center the QR code */
+            justify-content: center; /* Horizontally center the QR code */
+            background-color: white; /* White background for the QR code */
+            width: 100%; /* Make the container fill the card's width */
+            height: 100%; /* Make the container fill the card's height */
+            box-sizing: border-box; /* Include padding and border in the width/height calculation */
+            padding: 10px; /* Add padding to prevent the QR code from touching the edges */
+            overflow: hidden; /* Prevent any overflow issues */
+            border-radius: 10px; /* Optional: Add rounded corners to match the card style */
+        }
+        
+        .qr-image {
+            width: auto; /* Maintain the natural width */
+            height: auto; /* Maintain the natural height */
+            max-width: 90%; /* Ensure it fits within the container horizontally */
+            max-height: 90%; /* Ensure it fits within the container vertically */
+            object-fit: contain; /* Preserve aspect ratio */
+        }
+
+        .remove-button {
+            margin-top: 5px;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .remove-button:hover {
+            background-color: #c9302c;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+        
+        .card-container.hidden {
+            display: none;
+        }
+
+        .card.fullscreen + .remove-button {
+            display: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .toggle-qr {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1001; /* Ensure it appears above the card */
+        }
+        
+        .toggle-qr:hover {
+            background-color: #555;
+        }
+       
+        #add-card:hover {
+            background-color: #AF6A59;
+        }
+
+        .filter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            background-color: #f9f5f0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button id="btn-home" class="control">Home</button>
+        <button id="btn-clue-sheet" class="control">Clue Sheet</button>
+        <button id="btn-share-motive" class="control">Motive</button>
+        <button id="btn-add-card" class="control">Add Card</button>
+    </div>
+    
+    <div class="filter">
+        <label for="filter-options">Filter by:</label>
+        <select id="filter-options">
+            <option value="all">All</option>
+            <option value="weapons">Weapons</option>
+            <option value="suspects">Suspects</option>
+            <option value="rooms">Rooms</option>
+        </select>
+    </div>
+
+    <div class="hand" id="hand">
+        <div id="empty-hand-message" class="hidden">
+            Hand is empty - go find some clues!
+        </div>
+    </div>
+
+    <script>
+        const data = {
+            weapons: ['Cheese', 'Dagger', 'Rope', 'Revolver','Saber','Spear','Vase','Wine Bottle'],
+            suspects: ['Greens','Mahoganys','Mustards','Noirs','Orchids','Peacocks','Plums','Scarlets','Whites'],
+            rooms: ['Eagles Nest','Kitty Hines','Seaside Retreat','Secret Garden','Library','Lodge','Victorian Rose','Winter Dreams']
+        };
+
+        const handDiv = document.getElementById('hand');
+        
+        const homeButton = document.getElementById('btn-home');
+        const clueSheetButton = document.getElementById('btn-clue-sheet');
+        const addCardButton = document.getElementById('btn-add-card');
+        const shareMotiveButton = document.getElementById('btn-share-motive');
+
+        const emptyHandMessage = document.getElementById('empty-hand-message');
+
+        function checkHandEmpty() {
+            // Check if there are any actual card containers (excluding the empty-hand message)
+            const hasCards = Array.from(handDiv.children).some(
+                child => child.classList.contains('card-container') || child.classList.contains('card-container hidden')
+            );
+
+            if (!hasCards) {
+                emptyHandMessage.classList.remove('hidden'); // Show the empty hand message
+            } else {
+                emptyHandMessage.classList.add('hidden'); // Hide the empty hand message
+            }
+        }
+
+        function loadHand() {
+            const storedHand = JSON.parse(localStorage.getItem('playerHand')) || [];
+            storedHand.forEach(item => addCardToHand(item, false));
+            checkHandEmpty();
+        }
+
+        function saveHand() {
+            const cards = Array.from(handDiv.children).map(container => container.dataset.name);
+            localStorage.setItem('playerHand', JSON.stringify(cards));
+            checkHandEmpty();
+        }
+
+        function addCardToHand(name, select) {
+            if (!name) return; // Exit if name is invalid
+
+            // Find the card name in the data (case-insensitive)
+            const validName = Object.values(data)
+                .flat() // Combine all categories into one array
+                .find(item => item.toLowerCase() === name.toLowerCase());
+        
+            if (!validName) {
+                return false; // Exit if the name is not valid
+            }
+        
+            // Set the name to the exact match from the data
+            name = validName;            
+        
+            // Check if the card already exists in the hand
+            const existingCard = Array.from(handDiv.children).find(
+                container => container.dataset.name === name
+            );
+            if (existingCard) {
+                if(select === true) {
+                    window.location.href='hand';
+                }
+                return false;
+            }
+        
+            const cardContainer = document.createElement('div');
+            cardContainer.className = 'card-container';
+            cardContainer.dataset.name = name;
+        
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <img class="card-image" src="cards/${name.toLowerCase().replace(/ /g, '')}.jpg" alt="${name}">
+                <div class="card-qr hidden">
+                    <img class="qr-image" src="codes/${name.toLowerCase().replace(/ /g, '')}.png" alt="${name} QR Code">
+                </div>
+                <div class="card-label">${name}</div>`
+            ;
+        
+            card.addEventListener('click', () => toggleFullscreen(card, false));
+        
+            const removeButton = document.createElement('button');
+            removeButton.className = 'remove-button';
+            removeButton.textContent = 'Remove Card';
+            removeButton.addEventListener('click', () => {
+                cardContainer.remove();
+                saveHand();
+            });
+        
+            cardContainer.appendChild(card);
+            cardContainer.appendChild(removeButton);
+            handDiv.appendChild(cardContainer);
+
+            saveHand();
+
+            if (select === true) {
+                toggleFullscreen(card, select);
+            }
+        }
+
+
+        const overlay = document.createElement('div');
+        overlay.className = 'overlay';
+        document.body.appendChild(overlay);
+        
+        function toggleFullscreen(card, select) {
+            const isFullscreen = card.classList.contains('fullscreen');
+            const image = card.querySelector('.card-image');
+            const qrCode = card.querySelector('.card-qr');
+            const label = card.querySelector('.card-label');
+        
+            if (!isFullscreen) {
+                // Enter fullscreen mode
+                card.classList.add('fullscreen');
+                overlay.classList.add('active');
+                Array.from(handDiv.children).forEach(container => {
+                    if (!container.contains(card)) {
+                        container.classList.add('hidden');
+                    }
+                });
+
+                if(select === false) {
+                    // Toggle to QR code
+                    image.classList.add('hidden');
+                    qrCode.classList.remove('hidden');
+                    label.classList.add('hidden');
+                }
+    
+            } 
+            else {
+                // Reset the images
+                image.classList.remove('hidden');
+                qrCode.classList.add('hidden');
+                
+                // Exit fullscreen mode
+                card.classList.remove('fullscreen');
+                overlay.classList.remove('active');
+                label.classList.remove('hidden');
+                
+                Array.from(handDiv.children).forEach(container => container.classList.remove('hidden'));
+
+                checkHandEmpty();
+            }
+        }
+
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        homeButton.addEventListener('click', () => {
+            window.location.href = 'index';
+        });
+
+        clueSheetButton.addEventListener('click', () => {
+            window.location.href = 'cluesheet';
+        });
+
+        addCardButton.addEventListener('click', () => {
+            window.location.href = 'cardadd';
+        });
+
+        shareMotiveButton.addEventListener('click', () => {
+            const motives = JSON.parse(localStorage.getItem('motives')) || [];
+            
+            window.location.href = `secrets/${motives[0].guid}.html`;
+        });
+        
+
+        const filterOptions = document.getElementById('filter-options');
+        
+        filterOptions.addEventListener('change', () => {
+            const filter = filterOptions.value; // Get selected filter value
+            applyFilter(filter);
+        });
+        
+        function applyFilter(category) {
+            const allCards = Array.from(handDiv.children).filter(child => 
+                child.classList.contains('card-container')
+            );
+        
+            allCards.forEach(container => {
+                const cardName = container.dataset.name;
+                const isMatch = 
+                    category === 'all' || 
+                    data[category]?.includes(cardName);
+                
+                container.style.display = isMatch ? 'flex' : 'none';
+            });
+        }
+        
+        // Ensure filtering is applied when the page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            loadHand();
+            applyFilter('all');
+        });
+        
+
+        // Handle overlay click to deselect the card
+        overlay.addEventListener('click', () => {
+            const fullscreenCard = document.querySelector('.card.fullscreen');
+            if (fullscreenCard) {
+                toggleFullscreen(fullscreenCard, false);
+            }
+        });
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            // Load saved cards
+            loadHand();
+        
+            // Get the card name from the query parameter
+            const cardName = getQueryParam('card');
+            if (cardName) {
+                addCardToHand(cardName, true); // Add and select the card
+            }
+        });
+
+        loadHand();
+    </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murder Mystery Characters</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f9f5f0;
+            color: #333;
+            margin: 0;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
+
+            background-image: url('background.png');
+            background-repeat: repeat;
+            background-size: auto;
+            background-position: top left;
+        }
+
+        .character {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .character h1 {
+            font-size: 2rem;
+            color: #6A3F47;
+            margin-bottom: 10px;
+        }
+
+        .character h2 {
+            font-size: 1.5rem;
+            color: #AF6A59;
+            margin: 10px 0;
+        }
+
+        .character p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .character-details {
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            object-fit: cover;
+        }
+        
+        .description {
+            max-width: 600px; /* Limits the width of the text section */
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="character">
+        <a href="index" style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #6A3F47;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#AF6A59'"
+           onmouseout="this.style.backgroundColor='#6A3F47'">
+           ← Back to Previous Page
+        </a>
+        
+        <h1>Lord and Lady Peacock</h1>
+        
+        <div class="character-details">
+            <div class="description">
+                <p>Lady Peacock’s penchant for gossip means she knows everyone’s darkest secrets, and Lord Peacock’s military record has a classified section he refuses to discuss.</p>
+                <p><strong>Mrs. Peacock</strong> wears a royal-blue satin dress, pearl necklace, and a feathered fascinator. </p>
+                <p><strong>Lord Azure Peacock</strong> wears a navy-blue blazer, light blue shirt, and polished oxfords with a pocket square.</p>
+                <p><strong>Room:</strong><a href='https://www.hinesmansion.com/kitty-hines.htm' target='_blank'>Kitty Hines</a></p>
+            </div>
+            <img src="characters/worthington.jpg" alt="Lord and Lady Peacock">
+        </div>
+    </div>
+    
+    <div class="character">
+        <h1>Mr. and Mrs. Green</h1>
+        
+        <div class="character-details">
+            <div class="description">
+                <p>Mr. Green's business empire has been under investigation for fraud, and Mrs. Green has been seen whispering to people who mysteriously disappear.</p>
+                <p><strong>Mr. Green</strong> wears a green three-piece suit with a pocket watch and shiny black shoes.</p> 
+                <p><strong>Mrs. Emerald</strong> Green wears an elegant emerald-green evening gown with a diamond necklace and long gloves.</p>
+                <p><strong>Room:</strong><a href='https://www.hinesmansion.com/victorian-rose.htm' target='_blank'>Victorian Rose</a></p>
+            </div>
+            <img src="characters/burton.jpg" alt="Mr. and Mrs. Green">
+        </div>
+    </div>
+   
+    <div class="character">
+        <h1>Miss and Mr. Scarlet</h1>
+        
+        <div class="character-details">    
+            <div class="description">
+                <p>Miss Scarlet’s dramatic flair hides her history of heated arguments with the victim, and Mr. Scarlet’s scripts often feature eerily accurate murder plots.</p>
+                <p><strong>Miss Scarlet</strong> wears a bold red cocktail dress, red lipstick, and stilettos. </p>
+                <p><strong>Mr. Crimson</strong> Scarlet wears a red velvet blazer, black shirt, and dark trousers.</p>
+                <p><strong>Room:</strong><a href='https://www.hinesmansion.com/secret-garden.htm' target='_blank'>Secret Garden</a></p>
+            </div>
+            <img src="characters/byer.jpg" alt="Miss and Mr. Scarlet">
+        </div>
+    </div>
+
+    <div class="character">
+        <h1>Madam and Missy Mustard</h1>
+
+        <div class="character-details">
+            <div class="description">
+                <p>Madam Mustard's globetrotting has left her with enemies across the globe, and her daughter, Missy Mustard, seems to know far too much about the victim’s private life.</p>
+                <p><strong>Madam Saffron Mustard</strong> wears a mustard-yellow safari jacket, wide-brimmed hat, and knee-high boots. 
+                <p><strong>Miss Citrine Mustard</strong> wears a bright yellow sundress with a leather satchel and binoculars.</p>
+                <p><strong>Room:</strong><a href='https://www.hinesmansion.com/seaside-retreat.htm' target='_blank'>Seaside Retreat</a></p>
+            </div>
+            <img src="characters/terry.jpg" alt="Madam and Miss Mustard">
+        </div>
+    </div>
+
+    <div class="character">
+        <h1>Mrs. and Dr. White</h1>
+        
+        <div class="character-details">
+            <div class="description">
+                <p>Mrs. White was seen arguing with the victim over unpaid wages, and Dr. White’s medical practice lost its license after a patient’s untimely death.</p>
+                <p><strong>Mrs. White</strong> wears a crisp white apron over a black dress with a feather duster in hand. <p>
+                <p><strong>Dr. Ivory White</strong> wears a white lab coat, glasses, and a pocket full of mysterious vials.</p>
+                <p><strong>Room:</strong><a href='https://www.hinesmansion.com/eagles-nest.htm' target='_blank'>Eagles Nest</a></p>
+            </div>
+            <img src="characters/bennett.jpg" alt="Mrs. and Dr. White">
+        </div>
+    </div>
+
+    <div class="character">
+        <h1>Professor and Lady Plum</h1>
+        
+        <div class="character-details">
+            <div class="description">
+                <p>Professor Plum’s inventions often malfunction in dangerous ways, and Lady Plum’s collection of rare books includes several detailing infamous poisonings.</p>
+                <p><strong>Professor Plum</strong> wears a purple vest over a white shirt, purple bowtie, and glasses.</p> 
+                <p><strong>Lady Amethyst Plum</strong> wears a floor-length amethyst-purple dress with a fur stole and long earrings.</p>
+                <p><strong>Room:</strong><a href='https://www.hinesmansion.com/winter-dreams.htm' target='_blank'>Winter Dreams</a></p>
+            </div>
+            <img src="characters/broadbent.jpg" alt="Professor and Lady Plum">
+        </div>
+    </div>
+
+    <div class="character">
+        <h1>Inspector and Madam Noir</h1>
+
+        <div class="character-details">
+            <div class="description">
+                <p>Inspector Noir is rumored to have tampered with evidence in past cases, and Madam Noir’s career as a journalist has involved several mysterious disappearances.</p>
+                <p><strong>Inspector Noir</strong> wears a black trench coat, black fedora, and leather gloves.</p>
+                <p><strong>Madam Onyx Noir</strong> wears a sleek black dress with a wide-brimmed hat and dark sunglasses.</p>
+                <p><strong>Room:</strong><a href='https://www.hinesmansion.com/the-lodge.htm' target='_blank'>The Lodge</a></p>
+            </div>
+            <img src="characters/kynaston.jpg" alt="Inspector and Madam Noir">
+        </div>
+    </div>
+
+    <div class="character">
+        <h1 style='color: brown'>Mr. and Madam Mahogany</h1>
+
+        <div class="character-details">
+            <div class="description">
+                <p>Mr. Mahogany has been caught selling fake artifacts, and Madam Mahogany’s appraisals have a tendency to undervalue items that later go missing.</p>
+                <p><strong>Mr. Mahogany</strong> wears a brown leather jacket, beige scarf, and a satchel filled with “artifacts.”</p>
+                <p><strong>Madam Mahogany</strong> wears a chocolate-brown dress with gold accents and vintage jewelry.</p>
+                <p><strong>Room:</strong><a href='https://www.hinesmansion.com/library.htm' target='_blank'>The Library</a></p>
+            </div>
+            <img src="characters/durrant.jpg" alt="Mr. and Madam Mahogany">
+        </div>
+    </div>
+
+    <div class="character">
+        <h1>Dr. and Professor Orchid</h1>
+        
+        <div class="character-details">
+            <div class="description">
+                <p>Dr. Orchid’s experiments in exotic poisons were banned after a deadly accident, and Professor Orchid’s research grants have suspiciously disappeared.</p>
+                <p><strong>Dr. Orchid</strong> wears a pink lab coat over a floral blouse, paired with gardening gloves and boots. </p>
+                <p><strong>Professor Rose Orchid</strong> wears a pale pink button-up shirt, tweed jacket, and a magnifying glass in hand.</p>
+                <p><strong>Room:</strong> If someone can't stay the night you can take their place.</p>
+            </div>
+            <img src="characters/christain.jpg" alt="Dr. and Professor Orchid">
+        </div>
+    </div>    
+
+    <div class="character">
+        <h1>Hines Couple (Deceased)</h1>
+        
+        <div class="character-details">
+            <div class="description">
+                <p>Nathan and Bryn Hines, the last owners of the mansion, met a tragic and mysterious demise that left the community shaken. </p>
+            </div>
+            <img src="characters/ObituaryPhoto.jpg" alt="Obituary Photo">
+        </div>
+    </div> 
+</body>
+</html>

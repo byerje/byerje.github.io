@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code List</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f9f5f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            min-height: 100vh;
+            background-image: url('../background.png');
+            background-repeat: repeat;
+            background-size: auto;
+            background-position: top left;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #6A3F47;
+        }
+
+        .category {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 3px solid #6A3F47;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .category h2 {
+            font-size: 2rem;
+            color: #AF6A59;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .qr-list {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap to the next row */
+            gap: 20px; /* Adds spacing between items */
+            justify-content: center; /* Centers the items in the container */
+            width: 100%;
+        }
+
+        .qr-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 25px;
+            border: 2px solid #AF6A59;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .qr-item img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+
+        .qr-item .label {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #6A3F47;
+        }
+
+        a {
+            text-decoration: none; /* Remove the underline */
+            color: inherit; /* Use the current text color of the parent element */
+        }
+    </style>
+</head>
+<body>
+    <div class="category">
+        <a href="/Hines2025/cardadd" style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #6A3F47;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#AF6A59'"
+        onmouseout="this.style.backgroundColor='#6A3F47'">
+        ← Back to Previous Page
+        </a>
+    </div>
+
+    <div id="categories"></div>
+
+    <script>
+        const data = {
+            weapons: ['Cheese', 'Dagger', 'Rope', 'Revolver','Saber','Spear','Vase','Wine Bottle'],
+            suspects: ['Greens','Mahoganys','Mustards','Noirs','Orchids','Peacocks','Plums','Scarlets','Whites'],
+            rooms: ['Eagles Nest','Kitty Hines','Seaside Retreat','Secret Garden','Library','Lodge','Victorian Rose','Winter Dreams']
+        };
+
+        const categoriesContainer = document.getElementById('categories');
+
+        // Generate QR code sections by category
+        for (const [category, items] of Object.entries(data)) {
+            // Sort items alphabetically
+            const sortedItems = items.sort((a, b) => a.localeCompare(b));
+
+            // Create a section for each category
+            const categoryDiv = document.createElement('div');
+            categoryDiv.className = 'category';
+
+            // Add category title
+            categoryDiv.innerHTML = `<h2>${category.charAt(0).toUpperCase() + category.slice(1)}</h2>`;
+
+            // Add QR code list
+            const qrList = document.createElement('div');
+            qrList.className = 'qr-list';
+
+            sortedItems.forEach(item => {
+                const qrItem = document.createElement('div');
+                qrItem.className = 'qr-item';
+
+                qrItem.innerHTML = `
+                    <a href='/Hines2025/hand?card=${item}'>
+                    <img src="${item.toLowerCase().replace(/ /g, '')}.png" alt="${item} QR Code">
+                    </a>
+                    <div class="label"><a href='/Hines2025/hand?card=${item}'>${item}</a></div>
+                `;
+
+                qrList.appendChild(qrItem);
+            });
+
+            categoryDiv.appendChild(qrList);
+            categoriesContainer.appendChild(categoryDiv);
+        }
+    </script>
+</body>
+</html>
