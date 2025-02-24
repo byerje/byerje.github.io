@@ -113,6 +113,21 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
         }
 
+        @media (max-width: 767px) { /* Adjust the max-width value based on the phone sized screen */
+            .card-qr {
+                display: flex;
+                align-items: center; /* Vertically center the QR code */
+                justify-content: center; /* Horizontally center the QR code */
+                background-color: white; /* White background for the QR code */
+                width: 100vw; /* Make the container fill the viewport width */
+                height: 100vh; /* Make the container fill the viewport height */
+                box-sizing: border-box; /* Include padding and border in the width/height calculation */
+                padding: 10px; /* Add padding to prevent the QR code from touching the edges */
+                overflow: hidden; /* Prevent any overflow issues */
+                border-radius: 0; /* Remove rounded corners to fill the entire screen */
+            }
+        }
+
         .card-qr {
             display: flex;
             align-items: center; /* Vertically center the QR code */
