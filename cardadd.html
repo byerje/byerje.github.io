@@ -179,7 +179,7 @@
 
                 // Extract the card value and display it
                 const card = getCardFromUrl(qrCode.data);
-                cardDisplay.textContent = `Card: ${card || "None"}`;
+                cardDisplay.textContent = `Card: ${card. || "None"}`;
                 statusDiv.textContent = "QR Code detected. URL updated.";
             } else {
                 statusDiv.textContent = "Scanning for QR codes...";
