@@ -110,7 +110,7 @@
             left: 50%;
             transform: translate(-50%, -0) scale(2); /* Remove vertical adjustment */
             z-index: 1000;
-            box-shadow: 0 10px 100px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
         }
 
         @media (max-width: 767px) { /* Adjust the max-width value based on the phone sized screen */
@@ -140,7 +140,6 @@
             padding: 10px; /* Add padding to prevent the QR code from touching the edges */
             overflow: hidden; /* Prevent any overflow issues */
             border-radius: 10px; /* Optional: Add rounded corners to match the card style */
-            box-shadow: 0 10px 100px rgba(0, 0, 0, 0.5);
         }
         
         .qr-image {
@@ -385,7 +384,6 @@
                     image.classList.add('hidden');
                     qrCode.classList.remove('hidden');
                     label.classList.add('hidden');
-                    
                 }
     
             } 
