@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library ~ Guest Log</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f9f5f0;
+            color: #333;
+            margin: 0;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
+
+            background-image: url('../background.png');
+            background-repeat: repeat;
+            background-size: auto;
+            background-position: top left;
+        }
+
+        .guest-log {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .guest-log h1 {
+            font-size: 2rem;
+            color: #6A3F47;
+            margin-bottom: 10px;
+        }
+
+        .guest-log h2 {
+            font-size: 1.5rem;
+            color: #AF6A59;
+            margin: 10px 0;
+        }
+
+        .entry {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .entry:last-child {
+            border-bottom: none;
+        }
+
+        .entry-date {
+            font-weight: bold;
+            color: #555;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 1.5rem;
+        }
+
+        .entry-details {
+            margin-top: 5px;
+            color: #555;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 1.5rem;
+        }
+
+        .entry-author {
+            text-align: right;
+            color: #555;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .guest-log {
+                padding: 15px;
+            }
+
+            .guest-log h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="guest-log">
+        <a href="javascript:history.back()" style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #6A3F47;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#AF6A59'"
+           onmouseout="this.style.backgroundColor='#6A3F47'">
+           ← Back to Previous Page
+        </a>
+        
+        <h1>Library ~ Guest Log</h1>
+
+        <div class="entry">
+            <p class="entry-date">March 2, 2017</p>
+            <p class="entry-details">"The library was beautiful by day, but at night, it took on a sinister aura. I was lying in bed, reading, when I saw a book fall off the shelf on its own. I put it back, but an hour later, it happened again. The next morning, I opened the book and found an old photo tucked inside. The photo showed a woman in period clothing standing in the very room. When I returned to the shelf to place the book back, the photo was gone. I’m not sure if I imagined it, but it felt so real."</p>
+            <p class="entry-author">Catherine Hale, San Francisco</p>
+        </div>
+
+        <div class="entry">
+            <p class="entry-date">July 18, 2019</p>
+            <p class="entry-details">"The Library is enchanting by day and eerie by night. I heard whispers as if someone was reciting poetry, though I was alone. When I approached the bookshelf, the whispers stopped, but a faint breeze brushed past me. It was unforgettable."</p>
+            <p class="entry-author">Eleanor Simmons, Austin</p>
+        </div>
+
+        <div class="entry">
+            <p class="entry-date">November 25, 2021</p>
+            <p class="entry-details">"I stayed here over Thanksgiving and spent most of my time in the library. Late at night, I heard what sounded like someone flipping through pages of a book. When I checked, the book I’d been reading earlier was lying open on the desk, even though I’d left it on the shelf."</p>
+            <p class="entry-author">Lila Carter, Denver</p>
+        </div>
+
+        <div class="entry">
+            <p class="entry-date">September 14, 2023</p>
+            <p class="entry-details">"The Library was peaceful until midnight. I woke to find the desk lamp flickering, and a stack of books that had been neatly arranged earlier was now scattered on the floor. It felt like someone had been searching for something."</p>
+            <p class="entry-author">**George Ellis</p>
+        </div>
+        
+        <div class="entry">
+            <p class="entry-date">June 10, 2024</p>
+            <p class="entry-details">It’s been an unusually quiet evening, yet the air in the library feels heavier than usual. I spent the last hour sorting through the antique texts that Nathan and I discovered in the attic. Many of these books are older than the mansion itself, their spines cracked with age and their pages filled with handwritten annotations from long-forgotten hands.</p>
+            <p class="entry-details">As I returned a volume of Victorian poetry to its rightful place, I could have sworn I felt a presence—a gentle breeze stirred the still air, and the faint scent of lavender lingered, unbidden. This isn’t the first time I’ve felt something unusual in this room, but tonight it seemed almost purposeful, as though someone or something was watching.</p>
+            <p class="entry-details">The strangest moment came when I left my notebook on the desk for just a moment. When I returned, the book I’d been studying—one of Kitty Hines’s favorites, I believe—had been moved to the desk. Its pages were open to a poem about loss and eternal love.</p>
+            <p class="entry-details">I can’t help but wonder if the mansion’s history is pressing upon me. Perhaps it’s Kitty herself, still roaming these halls, or just the echoes of those who came before. I’ll try to shrug it off as imagination, but part of me isn’t so sure.</p>
+            <p class="entry-author">Bryn Hines</p>
+        </div>
+
+    </div>
+</body>
+</html>

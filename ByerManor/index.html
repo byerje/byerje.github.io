@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murder Mystery Dinner Invitation</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f9f5f0;
+            color: #333;
+            margin: 0;
+            padding: 20px 0; /* Adds spacing at the top and bottom */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 20px; /* Adds spacing between .invitation sections */
+            min-height: 100vh;
+            box-sizing: border-box;
+
+            background-image: url('background.png'); /* Replace with your image URL */
+            background-repeat: repeat; /* Ensures the background repeats */
+            background-size: auto; /* Keeps the original size of the image */
+            background-position: top left; /* Starts the repeating from the top-left corner */
+        }
+
+        .invitation {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            margin: 0 auto; /* Centers the content */
+            text-align: center;
+        }
+
+        .invitation h1 {
+            font-size: 2.5rem;
+            color: #6A3F47;
+            margin-bottom: 10px;
+        }
+
+        .invitation h2 {
+            font-size: 1.8rem;
+            color: #AF6A59;
+            margin: 10px 0;
+        }
+
+        .invitation p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .invitation img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            margin: 20px 0;
+            object-fit: cover;
+        }
+
+        .schedule {
+            font-size: 1rem;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .schedule h2 {
+            font-size: 1.5rem;
+            color: #6A3F47;
+            margin-bottom: 15px;
+        }
+
+        .schedule h3 {
+            color: #AF6A59;
+        }
+
+        .schedule-section {
+            margin-bottom: 20px;
+            margin-left: 40px;
+        }
+
+        .schedule-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 10px 0; /* Adds spacing between schedule items */
+            padding-left: 40px; /* Adds indentation */
+        }
+
+        .schedule-item .time {
+            flex: 0 0 100px; /* Fixed width for the time column */
+            font-weight: bold;
+            color: #444;
+        }
+
+        .schedule-item .details {
+            flex: 1; /* Details take up the remaining space */
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .invitation {
+                padding: 15px;
+            }
+
+            .invitation h1 {
+                font-size: 2rem;
+            }
+
+            .invitation h2 {
+                font-size: 1.5rem;
+            }
+
+            .schedule-item .time {
+                flex: 0 0 80px; /* Adjust time column width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Invitation Header -->
+    <div class="invitation">
+        <h1>You're Invited!</h1>
+        
+        <h2>Hines Mansion Murder Mystery</h2>
+        <h3>Dinner & Overnight Excursion</h3>
+        <h3>March 7th at 5:30 PM</h3>
+        <img src="hines.jpg" alt="The Hines Mansion">
+        <p class="location">The Hines Mansion<br>383 West 100 South<br>Provo, Utah 84601</p>
+        <a href='https://www.hinesmansion.com/photo-gallery.htm'  target="_blank">Click here for website</a>
+        <p>Parking: There's a parking lot, but there's also room on the street.</p>
+        <p>We can't wait to see you there!</p>
+    </div>
+
+    <!-- Schedule Section -->
+    <div class="invitation">
+        <div class="schedule">
+            <h2>Event Schedule</h2>
+            
+            <!-- March 7 Schedule -->
+            <div class="schedule-section">
+                <p><strong>March 7, 2025</strong></p>
+                <div class="schedule-item">
+                    <div class="time">5:30 PM</div>
+                    <div class="details">Check-In and Explore the Mansion</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">6:00 PM</div>
+                    <div class="details">Dinner Party</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">7:00 PM</div>
+                    <div class="details">Murder Mystery Begins</div>
+                </div>            
+            </div>
+
+            <!-- March 8 Schedule -->
+            <div class="schedule-section">
+                <p><strong>March 8, 2025</strong></p>
+                <div class="schedule-item">
+                    <div class="time">8:00 AM</div>
+                    <div class="details">Breakfast</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">11:00 AM</div>
+                    <div class="details">Checkout</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup and RSVP Section -->
+    <div class="invitation">
+        <div class="schedule">
+            <h2>Important Information:</h2>
+            <p>
+                We are really excited to have another <strong>Murder Mystery Dinner Party</strong> with you all at the Hines Mansion. 
+                It's going to be such a fun event!
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        <b>Character and Room Assignments</b> 
+                    </p>
+                    <p>
+                        Characters and rooms have been assigned randomly, click the link below to view what characters you are playing and which rooms you are staying in.  Please note that the important part of the costume is the color, the rest is just a suggestion. 
+                    </p>
+                    <p>
+                        <a href='characters'>View Assignments</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <b>Pre-game Information</b> 
+                    </p>
+                    <p>
+                        Information you need to read before we play the game.  This will introduce you to the plot behind the murder mystery.
+                    </p>
+                    <p>
+                        <a href='pregame'>View Pre-Game Details</a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <b>Dinner and Sides</b> 
+                    </p>
+                    <p>
+                        Dinner will be catered from Mo'Bettas, and will include: Kalua Pig, Chicken (optional teriyaki sauce) and Rice.
+                    </p>
+                    <p>
+                        We ask that you bring a side dish or dessert and drinks to share - Be creative and try to make the items you bring the same color as your character.
+                        You could match your character's color to the food/drink or the container/can.
+                    </p>
+                    <p>
+                        <a href="https://docs.google.com/spreadsheets/d/1NqYdC2Q-m5P_elEiWoSk9pjJOptfl-wspuDqmYnQtNI/edit?usp=sharing" target="_blank">Signup Sheet</a></li>
+                    </p>
+                <li>
+                    <p>
+                        <b>Arrival and Check In</b>
+                    </p>
+                    <p>
+                        Please arrive between 5:00 and 6:00 pm.  This will give you time to explore the rooms and get the layout of the hotel in your mind before dinner starts.</br>
+                        Do not unpack your suitcase yet, since people will be walking through all the rooms during round 1.</br>
+                        At check-in, you will receive a sealed envelope with 2 QR code cards, one is your motive and the other is a clue card (keep them secret). Scan the motive card first, then the clue card, to add them to your "hand".
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <b>Breakfast and Checkout</b>
+                    </p>
+                    <p>
+                        We will be providing pancakes and other breakfast food items in the morning starting at 8:00 am.
+                    </p>
+                    <p>
+                        The hotel provides continental breakfast items (yogurt, granola bars, hot chocolate, etc.), these are availabe in the kitchen either on the counter or in the fridge.  Feel free to help yourself.
+                    </p>
+                    <p>
+                        Checkout is <u>no later</u> than 11:00 am
+                    </p>
+                </li>
+                <li>
+                    <p><b>Cancellation</b></p>
+                    <p>
+                        If for any reason you can't stay the night, or need to cancel, please let us know as soon as possible
+                        so we can invite a couple who can fully attend the event.
+                    </p>
+                    <p>
+                        We completely understand that life happens, and we just want to make sure the party is as fun and full as possible! 
+                    </p>
+
+                </li>
+                <li>
+                    <p><b>What to bring?</b></p>
+                    <p>
+                        <ul>
+                            <li>You will need a phone with a camera to play the game (to scan QR codes).</li>
+                            <li>It is an overnight stay, so bring clothes, toothbrush, etc.</li>
+                            <li>Food items: side dish and drinks (thank you for helping with the food).</li>
+                            <li>Reading glasses, if you need them.</li>
+                        </ul>
+                    </p>
+                </li>
+            </ul>
+            <h3>
+                Thank you so much for joining us!
+            </h3>
+        </div>
+    </div>
+
+        <!-- Signup and RSVP Section -->
+    <div class="invitation">
+        <div class="schedule">
+            <h2>Links</h2>
+            <ul>
+                <li><a href='https://www.hinesmansion.com/photo-gallery.htm' target='_blank'>Hines Mansion</a></li>
+                <li><a href='characters'>Character and Room Assignments</a></li>
+                <li><a href='pregame'>Pre-game Information</a></li>
+                <li><a href='https://mobettahs.com/catering/' target='_blank'>Mo' Bettas Catering</a></li>
+                <li><a href='https://docs.google.com/spreadsheets/d/1NqYdC2Q-m5P_elEiWoSk9pjJOptfl-wspuDqmYnQtNI/edit?usp=sharing' target='_blank'>Side dish signup</a></li>
+                <li><a href='round1'>Round 1 ~ How to play</a></li>
+                <li><a href='round2'>Round 2 ~ How to play </a></li>
+                <li><a href='hand'>Start Game (Spoiler - Only click after game has started) </a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
+

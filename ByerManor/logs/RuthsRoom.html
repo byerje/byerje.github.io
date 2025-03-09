@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruth's Room ~ Guest Log</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f9f5f0;
+            color: #333;
+            margin: 0;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
+
+            background-image: url('../background.png');
+            background-repeat: repeat;
+            background-size: auto;
+            background-position: top left;
+        }
+
+        .guest-log {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .guest-log h1 {
+            font-size: 2rem;
+            color: #6A3F47;
+            margin-bottom: 10px;
+        }
+
+        .guest-log h2 {
+            font-size: 1.5rem;
+            color: #AF6A59;
+            margin: 10px 0;
+        }
+
+        .entry {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .entry:last-child {
+            border-bottom: none;
+        }
+
+        .entry-date {
+            font-weight: bold;
+            color: #555;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 1.5rem;
+        }
+
+        .entry-details {
+            margin-top: 5px;
+            color: #555;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 1.5rem;
+        }
+
+        .entry-author {
+            text-align: right;
+            color: #555;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .guest-log {
+                padding: 15px;
+            }
+
+            .guest-log h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="guest-log">
+        <a href="javascript:history.back()" style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #6A3F47;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#AF6A59'"
+           onmouseout="this.style.backgroundColor='#6A3F47'">
+           ← Back to Previous Page
+        </a>
+        
+        <h1>Ruth's Room ~ Guest Log</h1>
+
+        <div class="entry">
+            <p class="entry-date">May 18, 2019</p>
+            <p class="entry-details">"As soon as I walked in, I felt a heaviness in the air. It wasn’t until I tried to sleep that the true strangeness began. The sound of a typewriter—faint but unmistakable—filled the room. At first, I thought someone was playing a prank, but there was no one else staying near me. I also heard what sounded like cards shuffling, but when I got up to check, nothing was there. I left the lights on for the rest of the night."</p>
+            <p class="entry-author">James Conway, Las Vegas</p>
+        </div>
+
+        <div class="entry">
+            <p class="entry-date">October 15, 2020</p>
+            <p class="entry-details">"Ruth's Room felt cozy at first, but by nightfall, it was anything but. I woke up to the sound of footsteps pacing above me, though I was on the top floor. At one point, I thought I heard someone whisper my name, but when I turned on the light, the room was empty."</p>
+            <p class="entry-author">Hannah Black, Seattle</p>
+        </div>
+
+        <div class="entry">
+            <p class="entry-date">March 5, 2022</p>
+            <p class="entry-details">"This room has a strange energy. Around 3 AM, the lights flickered, and the sound of shuffling cards seemed to come from the desk. When I checked, nothing was there. I couldn’t shake the feeling that I was being watched."</p>
+            <p class="entry-author">Michael Ray, San Diego</p>
+        </div>
+
+        <div class="entry">
+            <p class="entry-date">January 2, 2023</p>
+            <p class="entry-details">"Ruth’s Room's history fascinated me, but staying here was unsettling. I heard faint laughter echoing in the room, and when I looked in the mirror, I thought I saw a figure behind me. The next morning, my suitcase was on the opposite side of the room from where I’d left it."</p>
+            <p class="entry-author">Olivia Green, Chicago</p>
+        </div>
+        
+        <div class="entry">
+            <p class="entry-date">July 19, 2024</p>
+            <p class="entry-details">"Ruth always found solace in this room, but I felt its darkness. She thought the history of the room was a source of strength, but I fear it held secrets we weren’t meant to uncover. Someone used that history to twist fate against us."</p>
+            <p class="entry-author">Kitty Hines</p>
+        </div>
+
+    </div>
+</body>
+</html>

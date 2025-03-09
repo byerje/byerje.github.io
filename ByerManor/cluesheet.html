@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clue Sheet</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f9f5f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            min-height: 100vh;
+            background-image: url('background.png');
+            background-repeat: repeat;
+            background-size: auto;
+            background-position: top left;
+        }
+
+        h1 {
+            color: #6A3F47;
+        }
+
+        .clue-category {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #6A3F47;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .clue-category h2 {
+            color: #AF6A59;
+            margin-bottom: 10px;
+        }
+
+        .clues-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            width: 48%;
+        }
+
+        li {
+            font-size: 1rem;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .collected {
+            color: red;
+            font-weight: bold;
+            text-decoration: line-through;
+        }
+
+        .not-collected {
+            color: black;
+        }
+
+        .status-icon {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .status-icon.collected {
+            background-color: red;
+        }
+
+        .status-icon.not-collected {
+            background-color: black;
+        }
+
+        .clues-container ul li {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between the icon and text */
+            padding: 5px 0; /* Space between list items */
+        }
+
+        .clue-link {
+            font-size: 1rem;
+            text-decoration: underline;
+            color: inherit; /* Inherits the parent color */
+        }
+
+        .clue-link.not-collected {
+            color: blue;
+        }
+
+        .clue-link.collected {
+            color: red;
+            font-weight: bold;
+            text-decoration: line-through;
+        }
+
+        #motives .motives-list {
+            list-style-type: none; /* Removes bullet points */
+            padding: 0;
+            margin: 0;
+            width: 100%; /* Ensures the list spans the full width */
+        }
+
+        #motives .motive-item {
+            margin-bottom: 20px; /* Adds spacing between motives */
+            font-size: 1rem;
+            line-height: 1.5;
+            display: block; /* Ensures each motive spans the full width */
+        }
+
+        #motives .motive-item strong {
+            font-size: 1.1rem;
+            color: #AF6A59;
+            display: block; /* Ensures the name is on its own line */
+            margin-bottom: 5px;
+        }
+
+        #motives .motive-item p {
+            margin: 0;
+            color: #333;
+            word-wrap: break-word; /* Ensures long text wraps within the container */
+        }
+
+        .clues-container ul li a {
+            color: #007BFF; /* Standard hyperlink blue color */
+            text-decoration: underline; /* Underline for hyperlinks */
+            font-size: 1rem; /* Ensure readability */
+            transition: color 0.3s ease; /* Smooth hover effect */
+        }
+
+        .clues-container ul li a:hover {
+            color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="clue-category">
+        <a href="hand" style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #6A3F47;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#AF6A59'"
+        onmouseout="this.style.backgroundColor='#6A3F47'">
+        View Hand
+        </a>
+    </div>
+
+    <div class="clue-category" id="weapons">
+        <h2>Weapons Collected</h2>
+        <div class="clues-container">
+            <ul></ul>
+            <ul></ul>
+        </div>
+    </div>
+
+    <div class="clue-category" id="suspects">
+        <h2>Suspects Collected</h2>
+        <div class="clues-container">
+            <ul></ul>
+            <ul></ul>
+        </div>
+    </div>
+
+    <div class="clue-category" id="rooms">
+        <h2>Rooms Collected</h2>
+        <div class="clues-container">
+            <ul></ul>
+            <ul></ul>
+        </div>
+    </div>
+
+    <div class="clue-category" id="motives">
+        <h2>Motives Discovered</h2>
+        <ul class="motives-list"></ul>
+    </div>
+
+    <div class="clue-category" id="pregame">
+        <h2>Pre-game Clues Collected</h2>
+        <div>
+            <ol>
+                <li>
+                    <span class="status-icon not-collected"></span>
+                    <a href="characters" class="clue-link not-collected">Character and Room Assignments</a>
+                </li>
+                <li>
+                    <span class="status-icon not-collected"></span>
+                    <a href="obituary" class="clue-link not-collected">Hines Obituary</a>
+                </li>
+                <li>
+                    <span class="status-icon not-collected"></span>
+                    <a href="letter" class="clue-link not-collected">Inspector Noir's Letter</a>
+                </li>
+                <li>
+                    <span class="status-icon not-collected"></span>
+                    <a href="dialog" class="clue-link not-collected">Pregame Dialog</a>
+                </li>
+                <li>
+                    <span class="status-icon not-collected"></span>
+                    <a href="haunted_rooms" class="clue-link not-collected">Room Guest Logs</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const data = {
+            weapons: ['Cheese', 'Dagger', 'Rope', 'Revolver', 'Saber', 'Spear', 'Vase', 'Wine Bottle'],
+            suspects: ['Greens', 'Mahoganys', 'Mustards', 'Noirs', 'Orchids', 'Peacocks', 'Plums', 'Scarlets', 'Whites'],
+            rooms: ['Eagles Nest', 'Kitty Hines', 'Seaside Retreat', 'Secret Garden', 'Library', 'Ruths Room', 'Victorian Rose', 'Winter Dreams']
+        };
+
+        const collectedClues = JSON.parse(localStorage.getItem('playerHand')) || [];
+
+        function populateClues(category, clues) {
+            const columns = document.querySelectorAll(`#${category} ul`);
+            clues.forEach((clue, index) => {
+                const listItem = document.createElement('li');
+                const isCollected = collectedClues.includes(clue);
+
+                listItem.innerHTML = `
+                    <span class="status-icon ${isCollected ? 'collected' : 'not-collected'}"></span>
+                    <span class="${isCollected ? 'collected' : 'not-collected'}">${clue}</span>
+                `;
+
+                columns[index % 2].appendChild(listItem);
+            });
+        }
+
+        function populateMotives() {
+            const motivesContainer = document.querySelector('#motives .motives-list');
+            const motives = JSON.parse(localStorage.getItem('motives')) || [];
+
+            motives.forEach(motive => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <div class="motive-item">
+                        <strong>${motive.character}</strong>
+                        <p>${motive.motive}</p>
+                    </div>
+                `;
+                motivesContainer.appendChild(listItem);
+            });
+        }
+
+        populateClues('weapons', data.weapons);
+        populateClues('suspects', data.suspects);
+        populateClues('rooms', data.rooms);
+
+        populateMotives();
+    </script>
+</body>
+</html>
