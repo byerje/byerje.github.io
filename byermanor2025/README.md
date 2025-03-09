@@ -1,2 +1,2 @@
 # MMDP-Hines
-Murder Mystery Dinner Party, Mar 7, 2025 - Hines mansion, Provo, UT
+Murder Mystery Dinner Party, Apr 18, 2025 - Byer Manor, South Jordan, UT
