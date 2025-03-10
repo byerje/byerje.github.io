@@ -95,7 +95,7 @@
 <body>
     <div class="category">
         <div class="button-container">
-            <a href="/cardadd" style="
+            <a href="/byermanor/cardadd" style="
                 display: inline-block;
                 padding: 10px 20px;
                 margin: 10px;
@@ -107,9 +107,9 @@
                 text-decoration: none;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 transition: background-color 0.3s ease;
-            " onmouseover="this.style.backgroundColor='#AF6A59'"
-            onmouseout="this.style.backgroundColor='#6A3F47'">
-            ← Back to Previous Page
+                " onmouseover="this.style.backgroundColor='#AF6A59'"
+                onmouseout="this.style.backgroundColor='#6A3F47'">
+                ← Back to Previous Page
             </a>
 
             <!-- Print Button -->
@@ -164,10 +164,10 @@
                 qrItem.className = 'qr-item';
 
                 qrItem.innerHTML = `
-                    <a href='/hand?card=${item}'>
-                        <img src="${item.toLowerCase().replace(/ /g, '')}.png" alt="${item} QR Code">
+                    <a href='/byermanor/hand?card=${item}'>
+                        <img src="/byermanor/${item.toLowerCase().replace(/ /g, '')}.png" alt="${item} QR Code">
                     </a>
-                    <div class="label"><a href='/hand?card=${item}'>${item}</a></div>
+                    <div class="label"><a href='/byermanor/hand?card=${item}'>${item}</a></div>
                 `;
 
                 qrList.appendChild(qrItem);

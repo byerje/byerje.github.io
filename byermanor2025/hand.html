@@ -318,7 +318,7 @@
             );
             if (existingCard) {
                 if(select === true) {
-                    window.location.href='hand';
+                    window.location.href='/byermanor/hand';
                 }
                 return false;
             }
@@ -330,9 +330,9 @@
             const card = document.createElement('div');
             card.className = 'card';
             card.innerHTML = `
-                <img class="card-image" src="cards/${name.toLowerCase().replace(/ /g, '')}.jpg" alt="${name}">
+                <img class="card-image" src="/byermanor/cards/${name.toLowerCase().replace(/ /g, '')}.jpg" alt="${name}">
                 <div class="card-qr hidden">
-                    <img class="qr-image" src="codes/${name.toLowerCase().replace(/ /g, '')}.png" alt="${name} QR Code">
+                    <img class="qr-image" src="/byermanor/codes/${name.toLowerCase().replace(/ /g, '')}.png" alt="${name} QR Code">
                 </div>
                 <div class="card-label">${name}</div>`
             ;
@@ -409,21 +409,21 @@
         }
 
         homeButton.addEventListener('click', () => {
-            window.location.href = 'index';
+            window.location.href = '/byermanor/index';
         });
 
         clueSheetButton.addEventListener('click', () => {
-            window.location.href = 'cluesheet';
+            window.location.href = '/byermanor/cluesheet';
         });
 
         addCardButton.addEventListener('click', () => {
-            window.location.href = 'cardadd';
+            window.location.href = '/byermanor/cardadd';
         });
 
         shareMotiveButton.addEventListener('click', () => {
             const motives = JSON.parse(localStorage.getItem('motives')) || [];
             
-            window.location.href = `secrets/${motives[0].guid}.html`;
+            window.location.href = `/byermanor/secrets/${motives[0].guid}.html`;
         });
         
 
