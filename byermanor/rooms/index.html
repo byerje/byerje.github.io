@@ -23,6 +23,23 @@
             background-size: auto;
             background-position: top left;
         }
+
+        .dialog {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .dialog h1 {
+            font-size: 2rem;
+            color: #6A3F47;
+            margin-bottom: 10px;
+        }        
         
         img {
             width: 150;
@@ -40,29 +57,42 @@
                 font-size: 1.8rem;
             }
         }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 767px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
-    <h1>Rooms</h1>
-    <!-- Back Button -->
-    <p>
-        <a href="/byermanor/index" style="
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            font-family: 'Georgia', serif;
-            font-size: 1rem;
-            color: #fff;
-            background-color: #6A3F47;
-            border-radius: 5px;
-            text-decoration: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease;
-            " onmouseover="this.style.backgroundColor='#AF6A59'"
-            onmouseout="this.style.backgroundColor='#6A3F47'">
-            ← Back to Home Page
-        </a>
-    </p>
+    <div class="dialog">
+
+        <h1>Rooms</h1>
+
+        <!-- Back Button -->
+        <p>
+            <a href="/byermanor/index" style="
+                display: inline-block;
+                padding: 10px 20px;
+                margin: 10px;
+                font-family: 'Georgia', serif;
+                font-size: 1rem;
+                color: #fff;
+                background-color: #6A3F47;
+                border-radius: 5px;
+                text-decoration: none;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: background-color 0.3s ease;
+                " onmouseover="this.style.backgroundColor='#AF6A59'"
+                onmouseout="this.style.backgroundColor='#6A3F47'">
+                ← Back to Home Page
+            </a>
+        </p>
+    </div>
+
     <div id="rooms"></div>
 
     <script>
@@ -93,7 +123,7 @@
                 imgItem.className = 'img';
 
                 imgItem.innerHTML = `
-                    <img src="/byermanor/codes/${item.toLowerCase().replace(/ /g, '')}.jpg" alt="${item}">
+                    <img src="/byermanor/rooms/${item.toLowerCase().replace(/ /g, '')}.jpg" alt="${item}">
                     <div class="label"><a href='/byermanor/hand?card=${item}'>${item}</a></div>
                 `;
 
