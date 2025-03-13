@@ -41,6 +41,43 @@
             margin-bottom: 10px;
         }        
         
+        .img-list {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap to the next row */
+            gap: 20px; /* Adds spacing between items */
+            justify-content: center; /* Centers the items in the container */
+            width: 100%;
+        }
+
+        .img-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 25px;
+            border: 2px solid #AF6A59;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .img-item img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+
+        .img-item .label {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #6A3F47;
+        }
+
+        a {
+            text-decoration: none; /* Remove the underline */
+            color: inherit; /* Use the current text color of the parent element */
+        }
+
         img {
             width: 150;
             height: 150;
@@ -112,19 +149,19 @@
             roomsDiv.className = 'rooms';
 
             // Add category title
-            roomsDiv.innerHTML = `<h2>${category.charAt(0).toUpperCase() + category.slice(1)}</h2>`;
+            // roomsDiv.innerHTML = `<h2>${category.charAt(0).toUpperCase() + category.slice(1)}</h2>`;
 
             // Add list of room images
             const imgList = document.createElement('div');
-            imgList.className = 'div';
+            imgList.className = 'img-list';
 
             sortedItems.forEach(item => {
                 const imgItem = document.createElement('div');
-                imgItem.className = 'img';
+                imgItem.className = 'img-item';
 
                 imgItem.innerHTML = `
-                    <img src="/byermanor/rooms/${item.toLowerCase().replace(/ /g, '')}.jpg" alt="${item}">
                     <div class="label"><a href='/byermanor/hand?card=${item}'>${item}</a></div>
+                    <img src="/byermanor/rooms/${item.toLowerCase().replace(/ /g, '')}.jpg" alt="${item}">
                 `;
 
                 imgList.appendChild(imgItem);
