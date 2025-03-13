@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secrets</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f9f5f0;
+            color: #333;
+            margin: 0;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
+            background-image: url('../background.png');
+            background-repeat: repeat;
+            background-size: auto;
+            background-position: top left;
+        }
+        
+        img {
+            width: 150;
+            height: 150;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
 
+        @media (max-width: 768px) {
+            .dialog {
+                padding: 15px;
+            }
+
+            .dialog h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Rooms</h1>
+    <!-- Back Button -->
+    <p>
+        <a href="/byermanor/index" style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #6A3F47;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            " onmouseover="this.style.backgroundColor='#AF6A59'"
+            onmouseout="this.style.backgroundColor='#6A3F47'">
+            ← Back to Home Page
+        </a>
+    </p>
+    <div id="rooms"></div>
+
+    <script>
+        const data = {
+            rooms: ['Study', 'Kitchen', 'Living Room', 'Dining Room', 'Laundry Room', 'Exercise Room', 'Theater Room', 'Bunk Room']
+        };
+
+        const roomsContainer = document.getElementById('rooms');
+
+        // Show rooms
+        for (const [category, items] of Object.entries(data)) {
+            // Sort items alphabetically
+            const sortedItems = items.sort((a, b) => a.localeCompare(b));
+
+            // Create a section
+            const roomsDiv = document.createElement('div');
+            roomsDiv.className = 'rooms';
+
+            // Add category title
+            roomsDiv.innerHTML = `<h2>${category.charAt(0).toUpperCase() + category.slice(1)}</h2>`;
+
+            // Add list of room images
+            const imgList = document.createElement('div');
+            imgList.className = 'div';
+
+            sortedItems.forEach(item => {
+                const imgItem = document.createElement('div');
+                imgItem.className = 'img';
+
+                imgItem.innerHTML = `
+                    <img src="/byermanor/codes/${item.toLowerCase().replace(/ /g, '')}.jpg" alt="${item}">
+                    <div class="label"><a href='/byermanor/hand?card=${item}'>${item}</a></div>
+                `;
+
+                imgList.appendChild(imgItem);
+            });
+
+            roomsDiv.appendChild(imgList);
+            roomsContainer.appendChild(roomsDiv);
+        }
+    </script>
+</body>
+</html>
+        
