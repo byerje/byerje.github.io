@@ -7,9 +7,22 @@
     <style>
         body {
             font-family: 'Georgia', serif;
-            text-align: center;
-            padding: 20px;
             background-color: #f9f5f0;
+            color: #333;
+            margin: 0;
+            padding: 20px 0; /* Adds spacing at the top and bottom */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px; /* Adds spacing between sections */
+            min-height: 100vh;
+            box-sizing: border-box;
+
+            background-image: url('../background.png'); /* Replace with your image URL */
+            background-size: cover; /* Stretches the image to cover the entire background */
+            background-repeat: no-repeat; /* Prevents tiling */
+            background-position: center; /* Ensures the image is centered */
         }
 
         h1 {
