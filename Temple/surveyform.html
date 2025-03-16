@@ -56,6 +56,22 @@
             cursor: not-allowed; /* Change cursor to indicate it's not clickable */
             opacity: 0.7; /* Slight transparency for a 'disabled' look */
         }
+        
+        input {
+            width: 50%; /* Makes the input box half the width of the page */
+            padding: 10px; /* Adds spacing inside the input for better usability */
+            font-size: 16px; /* Sets a readable font size */
+            border: 2px solid #ccc; /* Adds a light gray border */
+            border-radius: 5px; /* Rounds the corners slightly */
+            box-sizing: border-box; /* Ensures padding is included in the total width */
+            outline: none; /* Removes the default focus outline */
+            transition: border-color 0.3s ease; /* Smooth transition for hover/focus effect */
+        }
+
+        input:focus {
+            border-color: #007BFF; /* Changes border color on focus (e.g., blue) */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adds a slight glow on focus */
+        }        
     </style>
 </head>
 <body>
@@ -235,7 +251,10 @@
                 <input type="checkbox" id="preserving_memories_help" name="help_offered" value="preserving_memories_help">
                 <label for="preserving_memories_help">Preserving memories</label>
                 <br>
-                <input type="text" id="other_help" name="other_help">
+                <input type="checkbox" id="other_teach" name="help_offered" value="other">
+                <label for="other_teach">Other</label>
+                <input type="text" id="other_teach" name="other_teach">
+                <br><br>
             </li>
             <li>
                 <label for="topics">What is a topic that you'd like addressed in a future workshop?</label>
