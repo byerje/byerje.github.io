@@ -56,11 +56,11 @@
             cursor: not-allowed; /* Change cursor to indicate it's not clickable */
             opacity: 0.7; /* Slight transparency for a 'disabled' look */
         }
-        
-        input {
+
+        input[type="text"] {
             width: 50%; /* Makes the input box half the width of the page */
-            padding: 10px; /* Adds spacing inside the input for better usability */
-            font-size: 16px; /* Sets a readable font size */
+            padding: 5px; /* Adds spacing inside the input for better usability */
+            font-size: 14px; /* Sets a readable font size */
             border: 2px solid #ccc; /* Adds a light gray border */
             border-radius: 5px; /* Rounds the corners slightly */
             box-sizing: border-box; /* Ensures padding is included in the total width */
@@ -68,7 +68,7 @@
             transition: border-color 0.3s ease; /* Smooth transition for hover/focus effect */
         }
 
-        input:focus {
+        input[type="text"]:focus {
             border-color: #007BFF; /* Changes border color on focus (e.g., blue) */
             box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adds a slight glow on focus */
         }        
