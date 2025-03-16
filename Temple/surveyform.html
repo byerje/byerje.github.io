@@ -24,6 +24,38 @@
         label {
             font-family: Arial, sans-serif;
         }
+
+        button {
+            background-color: #007BFF; /* Primary blue color */
+            color: white; /* White text for contrast */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px 20px; /* Add spacing */
+            font-size: 16px; /* Readable text size */
+            font-weight: bold; /* Bold text for emphasis */
+            cursor: pointer; /* Pointer cursor for a clickable feel */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+            position: absolute;
+            left: 25%; /* Moves the button 25% from the left edge */
+            top: 50px; /* Adjust this to set the vertical position */
+            transform: translateX(-50%); /* Optionally adjust for centering the button */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue for hover effect */
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+
+        button:active {
+            background-color: #003f7f; /* Even darker blue when active */
+            transform: scale(0.95); /* Slight press effect */
+        }
+
+        button:disabled {
+            background-color: #cccccc; /* Gray background when disabled */
+            cursor: not-allowed; /* Change cursor to indicate it's not clickable */
+            opacity: 0.7; /* Slight transparency for a 'disabled' look */
+        }
     </style>
 </head>
 <body>
