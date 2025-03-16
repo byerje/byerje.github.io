@@ -8,13 +8,20 @@
             margin: 0;
             font-family: Arial, sans-serif; /* Optional: for styling text */
         }
+
+        .img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
     <h1>Temple and Family History Survey 2025</h1>
     <br><br>
     <h3>Enter Your Name</h3>
-    <img src="/JordanRiverTemple.png">
+    <img src="JordanRiverTemple.png" alt="Jordan River Temple">
     <form action="/submit" method="post">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
