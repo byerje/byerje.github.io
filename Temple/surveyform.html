@@ -17,7 +17,7 @@
             display: block;
         }
 
-        h1, h3 {
+        h1 {
             text-align: center;
         }
     </style>
@@ -25,10 +25,8 @@
 <body>
     <h1>Temple & Family History Survey</h1>
     <h3>March 30, 2025</h3>
-    <br><br>
     <img src="JordanRiverTemple.png" alt="Jordan River Temple">
-    <br><br>
-    <h3>Enter Your Name</h3>
+    <h3>Please enter your name</h3>
     <form action="/submit" method="post">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
@@ -38,7 +36,7 @@
             <li>
                 <label>I have a FamilySearch or Church account:</label>
                 <br>
-                <input type="radio" id="yes" name="account" value="yes" required>
+                <input type="radio" id="yes" name="account" value="yes">
                 <label for="yes">Yes</label>
                 <br>
                 <input type="radio" id="no" name="account" value="no">
@@ -48,7 +46,7 @@
             <li>
                 <label>Using FamilySearch:</label>
                 <br>
-                <input type="radio" id="easy" name="using_familysearch" value="easy" required>
+                <input type="radio" id="easy" name="using_familysearch" value="easy">
                 <label for="easy">Is easy</label>
                 <br>
                 <input type="radio" id="little_confusing" name="using_familysearch" value="little_confusing">
@@ -64,7 +62,7 @@
             <li>
                 <label>I am able to print or submit names for temple ordinances using Ordinance Ready in FamilySearch:</label>
                 <br>
-                <input type="radio" id="yes_ready" name="ordinance_ready" value="yes" required>
+                <input type="radio" id="yes_ready" name="ordinance_ready" value="yes">
                 <label for="yes_ready">Yes</label>
                 <br>
                 <input type="radio" id="no_ready" name="ordinance_ready" value="no">
@@ -74,7 +72,7 @@
             <li>
                 <label>I use FamilySearch apps on my phone:</label>
                 <br>
-                <input type="radio" id="yes_phone" name="apps_phone" value="yes" required>
+                <input type="radio" id="yes_phone" name="apps_phone" value="yes">
                 <label for="yes_phone">Yes</label>
                 <br>
                 <input type="radio" id="no_phone" name="apps_phone" value="no">
@@ -87,7 +85,7 @@
             <li>
                 <label>Using FamilySearch on the phone:</label>
                 <br>
-                <input type="radio" id="easy_phone" name="using_phone" value="easy" required>
+                <input type="radio" id="easy_phone" name="using_phone" value="easy">
                 <label for="easy_phone">Is easy</label>
                 <br>
                 <input type="radio" id="somewhat_difficult" name="using_phone" value="somewhat_difficult">
@@ -103,7 +101,7 @@
             <li>
                 <label>I know how to index:</label>
                 <br>
-                <input type="radio" id="yes_index" name="know_index" value="yes" required>
+                <input type="radio" id="yes_index" name="know_index" value="yes">
                 <label for="yes_index">Yes</label>
                 <br>
                 <input type="radio" id="no_index" name="know_index" value="no">
@@ -113,7 +111,7 @@
             <li>
                 <label>I want to help index names:</label>
                 <br>
-                <input type="radio" id="yes_help_index" name="help_index" value="yes" required>
+                <input type="radio" id="yes_help_index" name="help_index" value="yes">
                 <label for="yes_help_index">Yes</label>
                 <br>
                 <input type="radio" id="no_help_index" name="help_index" value="no">
@@ -123,7 +121,7 @@
             <li>
                 <label>My 1st 4 generations in FamilySearch:</label>
                 <br>
-                <input type="radio" id="all_done" name="generations" value="all_done" required>
+                <input type="radio" id="all_done" name="generations" value="all_done">
                 <label for="all_done">Are all done</label>
                 <br>
                 <input type="radio" id="incomplete" name="generations" value="incomplete">
@@ -139,7 +137,7 @@
             <li>
                 <label>I am comfortable using other Family History sites like ancestry.com:</label>
                 <br>
-                <input type="radio" id="yes_ancestry" name="comfortable_ancestry" value="yes" required>
+                <input type="radio" id="yes_ancestry" name="comfortable_ancestry" value="yes">
                 <label for="yes_ancestry">Yes</label>
                 <br>
                 <input type="radio" id="no_ancestry" name="comfortable_ancestry" value="no">
