@@ -38,8 +38,8 @@ namespace RREleven.TempleSurvey
             string email = data?.email ?? "Unknown";
 
             // Connection to Azure Table Storage
-            string connectionString = "YourAzureStorageConnectionString";
-            string tableName = "FormSubmissions";
+            string connectionString = "DefaultEndpointsProtocol=https;AccountName=templesurveybb44;AccountKey=w4ecdTERNSqsLFaSO6pRJjv4dCJUWVF3Z2JMf4quOT4doHfckLcJTqMpzVcixFziMspCSrg+XHLi+ASt2mW12w==;EndpointSuffix=core.windows.net";
+            string tableName = "resultstable";
 
             var tableClient = new TableClient(connectionString, tableName);
             tableClient.CreateIfNotExists(); // Ensure the table exists
