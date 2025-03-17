@@ -28,8 +28,7 @@
 
         .name {
             font-size: 20px; /* Adjust this to your desired font size */
-            text-indent: 15px; /* Indents the first line of text */
-            margin-left: 15px; /* Adds indentation to the entire element */
+            margin-left: 35px; /* Adds indentation to the entire element */
             margin-right: 10px; /* Add space after the label */
         }
 
@@ -47,6 +46,7 @@
             left: 50%; /* Moves the button to the middle */
             bottom: 10px; /* Set distance from the bottom of the form */
             transform: translateX(-50%); /* Optionally adjust for centering the button */
+            transform-origin: center; /* Ensure scaling happens from the center */
         }
 
         button:hover {
@@ -55,7 +55,7 @@
 
         button:active {
             background-color: #003f7f; /* Even darker blue when active */
-            transform: scale(0.95); /* Slight press effect */
+            transform: translateX(-50%) scale(0.95); /* Centered scaling without affecting position */        
         }
 
         button:disabled {
