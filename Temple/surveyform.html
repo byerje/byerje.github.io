@@ -49,6 +49,17 @@
             transform-origin: center; /* Ensure scaling happens from the center */
         }
 
+        /* Media query for screens smaller than 768px (commonly for mobile devices) */
+        @media (max-width: 768px) {
+            .name {
+                font-size: 40px;
+            }
+            button {
+                padding: 15px 30px; /* Increase padding for a larger button */
+                font-size: 18px; /* Slightly larger text */
+            }
+        }
+
         button:hover {
             background-color: #0056b3; /* Darker blue for hover effect */
         }
