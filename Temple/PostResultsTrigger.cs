@@ -38,7 +38,7 @@ namespace RREleven.TempleSurvey
             string email = data?.email ?? "Unknown";
 
             // Connection to Azure Table Storage
-            string connectionString = Environment.GetEnvironmentVariable("AzureWebJobsStorage");
+            string? connectionString = Environment.GetEnvironmentVariable("AzureWebJobsStorage");
             if (string.IsNullOrEmpty(connectionString))
             {
                 log.LogError("Azure Table Storage connection string is not set in environment variables.");
