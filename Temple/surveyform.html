@@ -13,7 +13,7 @@
             position: relative; /* Allows absolute positioning inside the form */
             padding-bottom: 60px; /* Add space for the button */
         }
-        
+
         img {
             width: 50%;
             border-radius: 10px;
@@ -26,8 +26,9 @@
             text-align: center;
         }
 
-        label {
+        .name {
             font-family: Arial, sans-serif;
+            font-size: medium;
         }
 
         button {
@@ -83,7 +84,7 @@
     <h3>March 30, 2025</h3>
     <img src="JordanRiverTemple.png" alt="Jordan River Temple">
     <form action="/submit" method="post">
-        <label>Please enter your name</label>
+        <label class="name">Name</label>
         <input type="text" id="name" name="name" required>
         <br><br>
 
@@ -209,7 +210,7 @@
                 <label for="finding_info">Finding info on some of my ancestors</label>
                 <br>
                 <input type="checkbox" id="utilizing_apps" name="help_needed" value="utilizing_apps">
-                <label for="utilizing_apps">Utilizing FamilySearch apps on my phone or computer</label>
+                <label for="utilizing_apps">Utilizing FamilySearch apps on my phone</label>
                 <br>
                 <input type="checkbox" id="preparing_names" name="help_needed" value="preparing_names">
                 <label for="preparing_names">Preparing/submitting names for the temple</label>
@@ -235,13 +236,13 @@
                 <label for="using_familysearch">Using FamilySearch</label>
                 <br>
                 <input type="checkbox" id="tracing_heritage_help" name="help_offered" value="tracing_heritage">
-                <label for="tracing_heritage_help">Tracing my heritage</label>
+                <label for="tracing_heritage_help">Tracing heritage</label>
                 <br>
                 <input type="checkbox" id="finding_info_help" name="help_offered" value="finding_info">
-                <label for="finding_info_help">Finding info on some of my ancestors</label>
+                <label for="finding_info_help">Finding information on the deceased</label>
                 <br>
                 <input type="checkbox" id="using_apps" name="help_offered" value="using_apps">
-                <label for="using_apps">Using FamilySearch apps on my phone or computer</label>
+                <label for="using_apps">Using FamilySearch apps</label>
                 <br>
                 <input type="checkbox" id="preparing_names_help" name="help_offered" value="preparing_names">
                 <label for="preparing_names_help">Preparing/submitting names for the temple</label>
