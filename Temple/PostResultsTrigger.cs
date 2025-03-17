@@ -45,13 +45,11 @@ namespace RREleven.TempleSurvey
             tableClient.CreateIfNotExists(); // Ensure the table exists
 
             // Create a new entity
-            var formData = new
+            var formData = new TableEntity("FormSubmissions", Guid.NewGuid().ToString())
             {
-                PartitionKey = "FormSubmissions", // Logical group
-                RowKey = Guid.NewGuid().ToString(), // Unique ID for the row
-                Name = name,
-                Email = email,
-                Timestamp = DateTime.UtcNow
+                { "Name", name },
+                { "Email", email },
+                { "Timestamp", DateTime.UtcNow }
             };
 
             // Insert entity into Table Storage

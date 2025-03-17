@@ -16,7 +16,6 @@
     <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.41" />
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions" Version="5.0.0" />
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Http" Version="3.2.0" />
-    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.6.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
