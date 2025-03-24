@@ -13,7 +13,7 @@
             padding: 20px 0; /* Adds spacing at the top and bottom */
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Aligns content to the top */            
+            align-items: center; /* Aligns content to the center horizontally */            
             flex-direction: column;
             gap: 20px; /* Adds spacing between sections */
             min-height: 100vh;
@@ -25,10 +25,10 @@
             background-position: center; /* Ensures the image is centered */
         }
 
-        /* Media query for narrow screens */
-        @media (max-width: 600px) {
+        @media (max-width: 767px) { /* Media query for phone screens */
             body {
-                padding: 20px 10px; /* Adjusts padding for smaller screens */
+                padding: 10px; /* Adjusts padding for smaller screens */
+                gap: 10px; /* Reduces spacing between sections */
             }
         }
         
@@ -38,7 +38,7 @@
 
         .clue-category {
             width: 100%;
-            max-width: 600px;
+            max-width: 90%;
             background-color: #fff;
             padding: 20px;
             border: 2px solid #6A3F47;

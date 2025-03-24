@@ -13,7 +13,7 @@
             padding: 20px 0; /* Adds spacing at the top and bottom */
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Aligns content to the top */
+            align-items: center; /* Aligns content to the center horizontally */
             flex-direction: column;
             gap: 20px; /* Adds spacing between sections */
             min-height: 100vh;
@@ -129,6 +129,10 @@
                 overflow: hidden; /* Prevent any overflow issues */
                 border-radius: 0; /* Remove rounded corners to fill the entire screen */
                 background-color: black; /* Make it dark in the background */
+            }
+            body {
+                padding: 10px; /* Adjusts padding for smaller screens */
+                gap: 10px; /* Reduces spacing between sections */
             }
         }
 
