@@ -13,7 +13,7 @@
             padding: 20px 0; /* Adds spacing at the top and bottom */
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Aligns content to the top */            
             flex-direction: column;
             gap: 20px; /* Adds spacing between sections */
             min-height: 100vh;
@@ -25,6 +25,13 @@
             background-position: center; /* Ensures the image is centered */
         }
 
+        /* Media query for narrow screens */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px; /* Adjusts padding for smaller screens */
+            }
+        }
+        
         h1 {
             color: #6A3F47;
         }
