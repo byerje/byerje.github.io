@@ -1,2 +1,2 @@
 # MMDP-ByerManor
-Murder Mystery Dinner Party, Apr 18, 2025 - Byer Manor, South Jordan, UT
+Murder Mystery Dinner Party, Sep 4, 2025 - Byer Manor, South Jordan, UT
