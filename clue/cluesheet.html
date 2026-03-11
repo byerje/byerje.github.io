@@ -202,10 +202,10 @@
         </div>
     </div>
 
-    <div class="clue-category" id="motives">
+    <!--<div class="clue-category" id="motives">
         <h2>Motives Discovered</h2>
         <ul class="motives-list"></ul>
-    </div>
+    </div>-->
 
     <div class="clue-category" id="pregame">
         <h2>Pre-game Clues Collected</h2>
@@ -223,10 +223,10 @@
                     <span class="status-icon not-collected"></span>
                     <a href="/clue/letter" class="clue-link not-collected">Inspector Noir's Letter</a>
                 </li>
-                <li>
+                <!--<li>
                     <span class="status-icon not-collected"></span>
                     <a href="/clue/dialog" class="clue-link not-collected">Pregame Dialog</a>
-                </li>
+                </li>-->
             </ul>
         </div>
     </div>
@@ -235,7 +235,7 @@
         const data = {
             weapons: ['Dagger', 'Poison', 'Rope', 'Revolver', 'Saber', 'Spear', 'Vase', 'Wine Bottle'],
             suspects: ['Greens', 'Mahoganys', 'Mustards', 'Noirs', 'Orchids', 'Peacocks', 'Plums', 'Scarlets', 'Whites'],
-            rooms: ['Study', 'Kitchen', 'Living Room', 'Dining Room', 'Laundry Room', 'Exercise Room', 'Theater Room', 'Bunk Room']
+            rooms: ['Lounge', 'Kitchen', 'Ballroom', 'Dining Room', 'Hall', 'Study', 'Library', 'Conservatory']
         };
 
         const collectedClues = JSON.parse(localStorage.getItem('playerHand')) || [];
@@ -275,7 +275,7 @@
         populateClues('suspects', data.suspects);
         populateClues('rooms', data.rooms);
 
-        populateMotives();
+        /*populateMotives();*/
     </script>
 </body>
 </html>

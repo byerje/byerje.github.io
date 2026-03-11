@@ -267,7 +267,7 @@
         const data = {
             weapons: ['Dagger', 'Poison', 'Rope', 'Revolver','Saber','Spear','Vase','Wine Bottle'],
             suspects: ['Greens','Mahoganys','Mustards','Noirs','Orchids','Peacocks','Plums','Scarlets','Whites'],
-            rooms: ['Study', 'Kitchen', 'Living Room', 'Dining Room', 'Laundry Room', 'Exercise Room', 'Theater Room', 'Bunk Room']
+            rooms: ['Lounge', 'Kitchen', 'Ballroom', 'Dining Room', 'Hall', 'Study', 'Library', 'Conservatory']
         };
 
         const handDiv = document.getElementById('hand');
@@ -427,11 +427,11 @@
             window.location.href = '/clue/cardadd';
         });
 
-        shareMotiveButton.addEventListener('click', () => {
-            const motives = JSON.parse(localStorage.getItem('motives')) || [];
+        //shareMotiveButton.addEventListener('click', () => {
+        //    const motives = JSON.parse(localStorage.getItem('motives')) || [];
             
-            window.location.href = `/clue/secrets/${motives[0].guid}.html`;
-        });
+        //    window.location.href = `/clue/secrets/${motives[0].guid}.html`;
+        //});
         
 
         const filterOptions = document.getElementById('filter-options');
