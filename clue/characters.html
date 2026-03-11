@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murder Mystery Characters</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f9f5f0;
+            color: #333;
+            margin: 0;
+            padding: 20px 0; /* Adds spacing at the top and bottom */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Aligns content to the top */
+            flex-direction: column;
+            gap: 20px; /* Adds spacing between sections */
+            min-height: 100vh;
+            box-sizing: border-box;
+
+            background-image: url('/clue/background.png'); /* Replace with your image URL */
+            background-size: cover; /* Stretches the image to cover the entire background */
+            background-repeat: no-repeat; /* Prevents tiling */
+            background-position: center; /* Ensures the image is centered */
+        }
+
+        .character {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .character h1 {
+            font-size: 2rem;
+            color: #6A3F47;
+            margin-bottom: 10px;
+        }
+
+        .character h2 {
+            font-size: 1.5rem;
+            color: #AF6A59;
+            margin: 10px 0;
+        }
+
+        .character p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .character-details {
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            object-fit: cover;
+        }
+        
+        .description {
+            max-width: 600px; /* Limits the width of the text section */
+            text-align: left;
+        }
+
+        .outlined-text {
+            color: white;
+            text-shadow: 
+            -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="character">
+        <a href="/clue/index" style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #6A3F47;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            " onmouseover="this.style.backgroundColor='#AF6A59'"
+            onmouseout="this.style.backgroundColor='#6A3F47'">
+            ← Back to Previous Page
+        </a>
+
+        <h1 style='color: red'>Ms. and Mr. Scarlet</h1>
+        
+        <div class="character-details">    
+            <div class="description">
+                <p>Ms. Scarlet’s dramatic flair hides her history of heated arguments with the victim, and Mr. Scarlet’s scripts often feature eerily accurate murder plots.</p>
+                <p><strong>Ms. Scarlet</strong> wears a bold red cocktail dress, red lipstick, and stilettos. </p>
+                <p><strong>Mr. Crimson Scarlet</strong> wears a red velvet blazer, black shirt, and dark trousers.</p>
+            </div>
+            <img src="/clue/characters/scarlet.jpg" alt="The Scarlets">
+        </div>        
+    </div>
+       
+    <div class="character">
+        <h1 style='color: cornflowerblue'>Lord and Lady Peacock</h1>
+        
+        <div class="character-details">
+            <div class="description">
+                <p>Lady Peacock’s penchant for gossip means she knows everyone’s darkest secrets, and Lord Peacock’s military record had a classified section he refuses to discuss.</p>
+                <p><strong>Lady Peacock</strong> wears a royal-blue satin dress, pearl necklace, and a feathered fascinator. </p>
+                <p><strong>Lord Peacock</strong> wears a dinner jacket with a blue hankerchief in his coat pocket.</p>
+            </div>
+            <img src="/clue/characters/peacock.jpg" alt="The Peacocks">
+        </div>
+    </div>
+
+    <div class="character">
+        <h1 style='color: green'>Mr. and Mrs. Green</h1>
+        
+        <div class="character-details">
+            <div class="description">
+                <p>Mr. Green's business empire has been under investigation for fraud, and Mrs. Green has been seen whispering to people who mysteriously disappear.</p>
+                <p><strong>Mr. Green</strong> wears a green three-piece suit with a pocket watch and shiny black shoes.</p> 
+                <p><strong>Mrs. Emerald Green</strong> wears an elegant emerald-green evening gown with a diamond necklace and long gloves.</p>
+            </div>
+            <img src="/clue/characters/green.jpg" alt="The Greens">
+        </div>
+    </div>
+
+    <div class="character">
+        <h1 style='color: goldenrod'>Madam and Colonel Mustard</h1>
+
+        <div class="character-details">
+            <div class="description">
+                <p>Madam Mustard's globetrotting has left her with enemies across the globe and Colonel Mustard seems to know far too much about the victim’s private life.</p>
+                <p><strong>Madam Saffron Mustard</strong> wears a mustard-yellow safari jacket, wide-brimmed hat, and knee-high boots. 
+                <p><strong>Colonel Mustard</strong> wears a bright safari explorer outfit with a leather satchel and binoculars.</p>
+            </div>
+            <img src="/clue/characters/mustard.jpg" alt="The Mustards">
+        </div>
+    </div>
+
+    <div class="character">
+        <h1 class="outlined-text" style="color: white;">Mrs. and Dr. White</h1>
+        
+        <div class="character-details">
+            <div class="description">
+                <p>Mrs. White was seen arguing with the victim over unpaid wages, and Dr. White’s medical practice lost its license after a patient’s untimely death.</p>
+                <p><strong>Mrs. White</strong> wears a crisp white apron over a black dress with a feather duster in hand. <p>
+                <p><strong>Dr. Ivory White</strong> wears a white lab coat, glasses, and a pocket full of mysterious vials.</p>
+            </div>
+            <img src="/clue/characters/white.jpg" alt="The Whites">
+        </div>
+    </div>
+
+    <div class="character">
+        <h1 style='color: purple'>Professor and Lady Plum</h1>
+        
+        <div class="character-details">
+            <div class="description">
+                <p>Professor Plum’s inventions often malfunction in dangerous ways, and Lady Plum’s collection of rare books includes several detailing infamous poisonings.</p>
+                <p><strong>Professor Plum</strong> wears a purple vest over a white shirt, purple bowtie, and glasses.</p> 
+                <p><strong>Lady Amethyst Plum</strong> wears a floor-length amethyst-purple dress with a fur stole and long earrings.</p>
+            </div>
+            <img src="/clue/characters/plum.jpg" alt="The Plums">
+        </div>
+    </div>
+
+    <div class="character">
+        <h1 style='color: black'>Inspector and Madam Noir</h1>
+
+        <div class="character-details">
+            <div class="description">
+                <p>Inspector Noir is rumored to have tampered with evidence in past cases, and Madam Noir’s career as a journalist has involved several mysterious disappearances.</p>
+                <p><strong>Inspector Noir</strong> wears a black trench coat, black fedora, and leather gloves.</p>
+                <p><strong>Madam Onyx Noir</strong> wears a sleek black dress with a wide-brimmed hat and dark sunglasses.</p>
+            </div>
+            <img src="/clue/characters/noir.jpg" alt="The Noirs">
+        </div>
+    </div>
+
+    <div class="character">
+        <h1 style='color: brown'>Mr. and Madam Mahogany</h1>
+
+        <div class="character-details">
+            <div class="description">
+                <p>Mr. Mahogany has been caught selling fake artifacts, and Madam Mahogany’s appraisals have a tendency to undervalue items that later go missing.</p>
+                <p><strong>Mr. Mahogany</strong> wears a brown leather jacket, beige scarf, and a satchel filled with “artifacts.”</p>
+                <p><strong>Madam Mahogany</strong> wears a chocolate-brown dress with gold accents and vintage jewelry.</p>
+            </div>
+            <img src="/clue/characters/mahogany.jpg" alt="The Mahoganys">
+        </div>
+    </div>
+
+    <div class="character">
+        <h1 style='color: plum'>Dr. and Professor Orchid</h1>
+        
+        <div class="character-details">
+            <div class="description">
+                <p>Dr. Orchid’s experiments in exotic poisons were banned after a deadly accident, and Professor Orchid’s research grants have suspiciously disappeared.</p>
+                <p><strong>Dr. Orchid</strong> wears a pale pink button-up shirt, tweed jacket, and a magnifying glass in hand. </p>
+                <p><strong>Professor Rose Orchid</strong> wears a pink lab coat over a floral blouse, paired with gardening gloves and boots. </p>
+            </div>
+            <img src="/clue/characters/orchid.jpg" alt="The Orchids">
+        </div>
+    </div>    
+
+    <div class="character">
+        <h1 style='color: black'>Ms. Body (Deceased)</h1>
+        
+        <div class="character-details">
+            <div class="description">
+                <p>Ms. Body met a tragic and mysterious demise that left the community shaken. </p>
+            </div>
+            <img src="/clue/characters/msbody.jpg" alt="Crime Scene Photo">
+        </div>
+    </div> 
+</body>
+</html>
+
+

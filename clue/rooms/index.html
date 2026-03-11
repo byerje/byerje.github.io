@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secrets</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f9f5f0;
+            color: #333;
+            margin: 0;
+            padding: 20px 0; /* Adds spacing at the top and bottom */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px; /* Adds spacing between sections */
+            min-height: 100vh;
+            box-sizing: border-box;
+
+            background-image: url('/clue/background.png'); /* Replace with your image URL */
+            background-size: cover; /* Stretches the image to cover the entire background */
+            background-repeat: no-repeat; /* Prevents tiling */
+            background-position: center; /* Ensures the image is centered */
+        }
+
+        .dialog {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .dialog h1 {
+            font-size: 2rem;
+            color: #6A3F47;
+            margin-bottom: 10px;
+        }        
+        
+        .img-list {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap to the next row */
+            gap: 20px; /* Adds spacing between items */
+            justify-content: center; /* Centers the items in the container */
+            width: 100%;
+        }
+
+        .img-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 25px;
+            border: 2px solid #AF6A59;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .img-item img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+
+        .img-item .label {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #6A3F47;
+        }
+
+        a {
+            text-decoration: none; /* Remove the underline */
+            color: inherit; /* Use the current text color of the parent element */
+        }
+
+        img {
+            width: 150;
+            height: 150;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .dialog {
+                padding: 15px;
+            }
+
+            .dialog h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dialog">
+
+        <h1>Rooms</h1>
+
+        <!-- Back Button -->
+        <p>
+            <a href="/clue/index" style="
+                display: inline-block;
+                padding: 10px 20px;
+                margin: 10px;
+                font-family: 'Georgia', serif;
+                font-size: 1rem;
+                color: #fff;
+                background-color: #6A3F47;
+                border-radius: 5px;
+                text-decoration: none;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: background-color 0.3s ease;
+                " onmouseover="this.style.backgroundColor='#AF6A59'"
+                onmouseout="this.style.backgroundColor='#6A3F47'">
+                ← Back to Home Page
+            </a>
+        </p>
+
+        <div id="rooms"></div>
+    </div>
+
+    <script>
+        const data = {
+            rooms: ['Study', 'Kitchen', 'Living Room', 'Dining Room', 'Laundry Room', 'Exercise Room', 'Theater Room', 'Bunk Room']
+        };
+
+        const roomsContainer = document.getElementById('rooms');
+
+        // Show rooms
+        for (const [category, items] of Object.entries(data)) {
+            // Sort items alphabetically
+            const sortedItems = items.sort((a, b) => a.localeCompare(b));
+
+            // Create a section
+            const roomsDiv = document.createElement('div');
+            roomsDiv.className = 'rooms';
+
+            // Add category title
+            // roomsDiv.innerHTML = `<h2>${category.charAt(0).toUpperCase() + category.slice(1)}</h2>`;
+
+            // Add list of room images
+            const imgList = document.createElement('div');
+            imgList.className = 'img-list';
+
+            sortedItems.forEach(item => {
+                const imgItem = document.createElement('div');
+                imgItem.className = 'img-item';
+
+                imgItem.innerHTML = `
+                    <div class="label"><a href='/clue/hand?card=${item}'>${item}</a></div>
+                    <img src="/clue/rooms/${item.toLowerCase().replace(/ /g, '')}.jpg" alt="${item}">
+                `;
+
+                imgList.appendChild(imgItem);
+            });
+
+            roomsDiv.appendChild(imgList);
+            roomsContainer.appendChild(roomsDiv);
+        }
+    </script>
+</body>
+</html>
+        

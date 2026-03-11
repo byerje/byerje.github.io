@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murder Mystery Dinner Party</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f9f5f0;
+            color: #333;
+            margin: 0;
+            padding: 20px 0; /* Adds spacing at the top and bottom */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Aligns content to the top */
+            flex-direction: column;
+            gap: 20px; /* Adds spacing between .invitation sections */
+            min-height: 100vh;
+            box-sizing: border-box;
+
+            background-image: url('/clue/background.png'); /* Replace with your image URL */
+            background-size: cover; /* Stretches the image to cover the entire background */
+            background-repeat: no-repeat; /* Prevents tiling */
+            background-position: center; /* Ensures the image is centered */
+        }
+
+        .invitation {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            margin: 0 auto; /* Centers the content */
+            text-align: center;
+        }
+
+        .invitation h1 {
+            font-size: 2.5rem;
+            color: #6A3F47;
+            margin-bottom: 10px;
+        }
+
+        .invitation h2 {
+            font-size: 1.8rem;
+            color: #AF6A59;
+            margin: 10px 0;
+        }
+
+        .invitation p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .invitation img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            margin: 20px 0;
+            object-fit: cover;
+        }
+
+        .schedule {
+            font-size: 1rem;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .schedule h2 {
+            font-size: 1.5rem;
+            color: #6A3F47;
+            margin-bottom: 15px;
+        }
+
+        .schedule h3 {
+            color: #AF6A59;
+        }
+
+        .schedule-section {
+            margin-bottom: 20px;
+            margin-left: 40px;
+        }
+
+        .schedule-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 10px 0; /* Adds spacing between schedule items */
+            padding-left: 40px; /* Adds indentation */
+        }
+
+        .schedule-item .time {
+            flex: 0 0 100px; /* Fixed width for the time column */
+            font-weight: bold;
+            color: #444;
+        }
+
+        .schedule-item .details {
+            flex: 1; /* Details take up the remaining space */
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .invitation {
+                padding: 15px;
+            }
+
+            .invitation h1 {
+                font-size: 2rem;
+            }
+
+            .invitation h2 {
+                font-size: 1.5rem;
+            }
+
+            .schedule-item .time {
+                flex: 0 0 80px; /* Adjust time column width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Invitation Header -->
+    <div class="invitation">
+        <h1>You're Invited!</h1>
+        
+        <h2>Murder Mystery Party</h2>
+        <h3>Mar 18 at 1:00 PM</h3>
+        <img src="/clue/byermanor.jpg" alt="The Byer Manor">
+        <p class="location">The Manor</p>
+        <p>We can't wait to see you there!</p>
+    </div>
+
+    <!-- Signup and RSVP Section -->
+    <div class="invitation">
+        <div class="schedule">
+            <h2>Important Information:</h2>
+            <ul>
+                <li>
+                    <p><b>Characters</b></p>
+                    <p>
+                        Characters are chosen randomly. What color you get is the team you are on.
+                    </p>
+                    <p>
+                        <a href='/clue/characters'>View Characters</a>
+                    </p>
+                </li>
+                <li>
+                    <p><b>Pre-game Information</b></p>
+                    <p>
+                        Follow the link below for storyline information you can read before we play the game.  This will introduce you to the plot behind the murder mystery.
+                    </p>
+                    <p>
+                        <a href='/clue/pregame'>View Pre-Game Information</a>
+                    </p>
+                </li>                
+                <li>
+                    <p><b>Arrival</b></p>
+                    <p>
+                        During the pre-game, you will receive a sealed envelope with a QR code card. This is your first clue.
+                        Scan the QR code to add it to your "hand".
+                    </p>
+                </li>
+                <li>
+                    <p><b>What to bring?</b></p>
+                    <p>
+                        - You will need a phone with a camera to play the game (to scan QR codes).</br>
+                        - Reading glasses, if you need them.
+                    </p>
+                </li>
+            </ul>
+            <h3>
+                Thank you so much for joining us!
+            </h3>
+        </div>
+    </div>
+
+        <!-- Signup and RSVP Section -->
+    <div class="invitation">
+        <div class="schedule">
+            <h2>Links</h2>
+            <ul>
+                <li><a href='/clue/characters'>Characters</a></li>
+                <li><a href='/clue/pregame'>Pre-game Information</a></li>
+                <li><a href='/clue/round1'>Round 1 ~ How to play</a></li>
+                <li><a href='/clue/round2'>Round 2 ~ How to play </a></li>
+                <li><a href='/clue/hand'>Start Game (Only click after game has started) </a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
+

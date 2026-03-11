@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Round 2 - Challenges</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f9f5f0;
+            color: #333;
+            margin: 0;
+            padding: 20px 0; /* Adds spacing at the top and bottom */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Aligns content to the top */
+            flex-direction: column;
+            gap: 20px; /* Adds spacing between sections */
+            min-height: 100vh;
+            box-sizing: border-box;
+
+            background-image: url('/clue/background.png'); /* Replace with your image URL */
+            background-size: cover; /* Stretches the image to cover the entire background */
+            background-repeat: no-repeat; /* Prevents tiling */
+            background-position: center; /* Ensures the image is centered */
+        }
+
+        .section {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .section h1 {
+            font-size: 2.5rem;
+            color: #6A3F47;
+            margin-bottom: 10px;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            color: #AF6A59;
+            margin: 10px 0;
+        }
+
+        .section p, .section li {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        .section ul {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+
+        .section .highlight {
+            font-weight: bold;
+            color: #6A3F47;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 15px;
+            }
+
+            .section h1 {
+                font-size: 2rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h1>Round 2 - Challenge Round</h1>
+
+        <!-- Back Button -->
+        <p>
+            <a href="/clue/index" style="
+                display: inline-block;
+                padding: 10px 20px;
+                margin: 10px;
+                font-family: 'Georgia', serif;
+                font-size: 1rem;
+                color: #fff;
+                background-color: #6A3F47;
+                border-radius: 5px;
+                text-decoration: none;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: background-color 0.3s ease;
+                " onmouseover="this.style.backgroundColor='#AF6A59'"
+                onmouseout="this.style.backgroundColor='#6A3F47'">
+                ← Back to Home Page
+            </a>
+        </p>        
+
+        <ul>
+            <li>Teams will compete head to head in <span class="highlight">minute-to-win-it challenges</span>.</li>
+            <li>The winner of each challenge can:
+                <ul>
+                    <li><span class="highlight">Ask to be shown a clue</span> (a weapon, suspect, or room). The losing team must show a card that the winning team doesn't already have (if possible).</li>
+                </ul>
+            </li>
+            <li>When you win a challenge, be sure to scan a QR code to collect a disclosed clue.</li>
+        </ul>
+        <p>Use strategy, skill, and quick thinking to win challenges and uncover the mystery!</p>
+    </div>
+    <div class="section">
+        <h2>Winning the game</h2>
+        <p>
+            A team who believes they have discovered the weapon, suspect, and room (all 3) can make a <span class="highlight">final accusation</span>.
+        </p>
+        <ul>
+            <li>A final accusation can be made at anytime.</li>
+            <li>The final accusation must be made in front of the entire group.</li>
+            <li>If someone can disprove the accusation, they will show them one of the clues that disproves it.</li>
+            <li>If no one can prove the accusation false, then the solutions envelope can be opened.</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>Final Rewards</h2>
+        <ul>
+            <li>There is a prize for the team who makes the correct <span class="highlight">final accusation</span>.</li>
+        </ul>
+    </div>
+</body>
+</html>
