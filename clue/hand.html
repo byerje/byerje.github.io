@@ -460,6 +460,12 @@
         window.addEventListener('DOMContentLoaded', () => {
             loadHand();
             applyFilter('all');
+
+            // Get the card name from the query parameter
+            const cardName = getQueryParam('card');
+            if (cardName) {
+                addCardToHand(cardName, true); // Add and select the card
+            }
         });
         
 
@@ -470,19 +476,6 @@
                 toggleFullscreen(fullscreenCard, false);
             }
         });
-        
-        window.addEventListener('DOMContentLoaded', () => {
-            // Load saved cards
-            loadHand();
-        
-            // Get the card name from the query parameter
-            const cardName = getQueryParam('card');
-            if (cardName) {
-                addCardToHand(cardName, true); // Add and select the card
-            }
-        });
-
-        loadHand();
     </script>
 </body>
 </html>
