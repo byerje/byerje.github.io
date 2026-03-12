@@ -4,53 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Murder Mystery Dinner Party</title>
+    <link rel="stylesheet" href="/clue/clue/styles.css">
     <style>
-        body {
-            font-family: 'Georgia', serif;
-            background-color: #f9f5f0;
-            color: #333;
-            margin: 0;
-            padding: 20px 0; /* Adds spacing at the top and bottom */
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Aligns content to the top */
-            flex-direction: column;
-            gap: 20px; /* Adds spacing between .invitation sections */
-            min-height: 100vh;
-            box-sizing: border-box;
-
-            background-image: url('/clue/background.png'); /* Replace with your image URL */
-            background-size: cover; /* Stretches the image to cover the entire background */
-            background-repeat: no-repeat; /* Prevents tiling */
-            background-position: center; /* Ensures the image is centered */
-        }
-
         .invitation {
-            background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            padding: 20px;
-            margin: 0 auto; /* Centers the content */
             text-align: center;
         }
 
         .invitation h1 {
             font-size: 2.5rem;
-            color: #6A3F47;
-            margin-bottom: 10px;
         }
 
         .invitation h2 {
             font-size: 1.8rem;
-            color: #AF6A59;
-            margin: 10px 0;
-        }
-
-        .invitation p {
-            font-size: 1.2rem;
-            margin: 10px 0;
         }
 
         .invitation img {
@@ -86,18 +51,18 @@
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            margin: 10px 0; /* Adds spacing between schedule items */
-            padding-left: 40px; /* Adds indentation */
+            margin: 10px 0;
+            padding-left: 40px;
         }
 
         .schedule-item .time {
-            flex: 0 0 100px; /* Fixed width for the time column */
+            flex: 0 0 100px;
             font-weight: bold;
             color: #444;
         }
 
         .schedule-item .details {
-            flex: 1; /* Details take up the remaining space */
+            flex: 1;
             font-size: 1rem;
             color: #555;
         }
@@ -109,10 +74,6 @@
         }
 
         @media (max-width: 768px) {
-            .invitation {
-                padding: 15px;
-            }
-
             .invitation h1 {
                 font-size: 2rem;
             }
@@ -122,14 +83,14 @@
             }
 
             .schedule-item .time {
-                flex: 0 0 80px; /* Adjust time column width on smaller screens */
+                flex: 0 0 80px;
             }
         }
     </style>
 </head>
 <body>
     <!-- Invitation Header -->
-    <div class="invitation">
+    <div class="panel invitation">
         <h1>You're Invited!</h1>
         
         <h2>Murder Mystery Party</h2>
@@ -140,7 +101,7 @@
     </div>
 
     <!-- Signup and RSVP Section -->
-    <div class="invitation">
+    <div class="panel invitation">
         <div class="schedule">
             <h2>Important Information:</h2>
             <ul>
@@ -183,8 +144,7 @@
         </div>
     </div>
 
-        <!-- Signup and RSVP Section -->
-    <div class="invitation">
+    <div class="panel invitation">
         <div class="schedule">
             <h2>Links</h2>
             <ul>

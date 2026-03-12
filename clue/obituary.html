@@ -4,53 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ms. Body Obituary</title>
+    <link rel="stylesheet" href="/clue/clue/styles.css">
     <style>
-        body {
-            font-family: 'Georgia', serif;
-            background-color: #f9f5f0;
-            color: #333;
-            margin: 0;
-            padding: 20px 0; /* Adds spacing at the top and bottom */
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Aligns content to the top */
-            flex-direction: column;
-            gap: 20px; /* Adds spacing between sections */
-            min-height: 100vh;
-            box-sizing: border-box;
-
-            background-image: url('/clue/background.png'); /* Replace with your image URL */
-            background-size: cover; /* Stretches the image to cover the entire background */
-            background-repeat: no-repeat; /* Prevents tiling */
-            background-position: center; /* Ensures the image is centered */
-        }
-
         .obituary {
-            background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            padding: 20px;
-            margin: 0 auto;
             text-align: center;
         }
 
         .obituary h1 {
             font-size: 2.5rem;
-            color: #6A3F47;
-            margin-bottom: 10px;
         }
 
         .obituary h2 {
             font-size: 1.8rem;
-            color: #AF6A59;
-            margin: 10px 0;
         }
 
         .obituary p {
-            font-size: 1.2rem;
-            margin: 10px 0;
             text-align: left;
         }
 
@@ -63,10 +31,6 @@
         }
 
         @media (max-width: 768px) {
-            .obituary {
-                padding: 15px;
-            }
-
             .obituary h1 {
                 font-size: 2rem;
             }
@@ -78,22 +42,9 @@
     </style>
 </head>
 <body>
-    <div class="obituary">
+    <div class="panel obituary">
         <p>
-            <a href="/clue/pregame" style="
-                display: inline-block;
-                padding: 10px 20px;
-                margin: 10px;
-                font-family: 'Georgia', serif;
-                font-size: 1rem;
-                color: #fff;
-                background-color: #6A3F47;
-                border-radius: 5px;
-                text-decoration: none;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                transition: background-color 0.3s ease;
-                " onmouseover="this.style.backgroundColor='#AF6A59'"
-                onmouseout="this.style.backgroundColor='#6A3F47'">
+            <a href="/clue/pregame" class="btn-nav">
                 ← Back to Previous Page
             </a>
         </p>

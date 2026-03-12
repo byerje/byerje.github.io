@@ -4,55 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Murder Mystery Characters</title>
+    <link rel="stylesheet" href="/clue/clue/styles.css">
     <style>
-        body {
-            font-family: 'Georgia', serif;
-            background-color: #f9f5f0;
-            color: #333;
-            margin: 0;
-            padding: 20px 0; /* Adds spacing at the top and bottom */
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Aligns content to the top */
-            flex-direction: column;
-            gap: 20px; /* Adds spacing between sections */
-            min-height: 100vh;
-            box-sizing: border-box;
-
-            background-image: url('/clue/background.png'); /* Replace with your image URL */
-            background-size: cover; /* Stretches the image to cover the entire background */
-            background-repeat: no-repeat; /* Prevents tiling */
-            background-position: center; /* Ensures the image is centered */
-        }
-
-        .character {
-            background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            padding: 20px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .character h1 {
-            font-size: 2rem;
-            color: #6A3F47;
-            margin-bottom: 10px;
-        }
-
-        .character h2 {
-            font-size: 1.5rem;
-            color: #AF6A59;
-            margin: 10px 0;
-        }
-
-        .character p {
-            font-size: 1.2rem;
-            margin: 10px 0;
-        }
-
         .character-details {
             justify-content: center;
             margin-top: 20px;
@@ -69,33 +22,11 @@
             max-width: 600px; /* Limits the width of the text section */
             text-align: left;
         }
-
-        .outlined-text {
-            color: white;
-            text-shadow: 
-            -1px -1px 0 #000,  
-            1px -1px 0 #000,
-            -1px 1px 0 #000,
-            1px 1px 0 #000;
-        }
     </style>
 </head>
 <body>
-    <div class="character">
-        <a href="/clue/index" style="
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            font-family: 'Georgia', serif;
-            font-size: 1rem;
-            color: #fff;
-            background-color: #6A3F47;
-            border-radius: 5px;
-            text-decoration: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease;
-            " onmouseover="this.style.backgroundColor='#AF6A59'"
-            onmouseout="this.style.backgroundColor='#6A3F47'">
+    <div class="panel">
+        <a href="/clue/index" class="btn-nav">
             ← Back to Previous Page
         </a>
 
@@ -111,7 +42,7 @@
         </div>        
     </div>
        
-    <div class="character">
+    <div class="panel">
         <h1 style='color: cornflowerblue'>Team Peacock</h1>
         
         <div class="character-details">
@@ -124,7 +55,7 @@
         </div>
     </div>
 
-    <div class="character">
+    <div class="panel">
         <h1 style='color: green'>Team Green</h1>
         
         <div class="character-details">
@@ -137,7 +68,7 @@
         </div>
     </div>
 
-    <div class="character">
+    <div class="panel">
         <h1 style='color: goldenrod'>Team Mustard</h1>
 
         <div class="character-details">
@@ -150,8 +81,8 @@
         </div>
     </div>
 
-    <div class="character">
-        <h1 class="outlined-text" style="color: white;">Team White</h1>
+    <div class="panel">
+        <h1 style='color: white;'>Team White</h1>
         
         <div class="character-details">
             <div class="description">
@@ -163,7 +94,7 @@
         </div>
     </div>
 
-    <div class="character">
+    <div class="panel">
         <h1 style='color: purple'>Team Plum</h1>
         
         <div class="character-details">
@@ -176,7 +107,7 @@
         </div>
     </div>
 
-    <div class="character">
+    <div class="panel">
         <h1 style='color: black'>Team Noir</h1>
 
         <div class="character-details">
@@ -189,7 +120,7 @@
         </div>
     </div>
 
-    <div class="character">
+    <div class="panel">
         <h1 style='color: brown'>Team Mahogany</h1>
 
         <div class="character-details">
@@ -202,7 +133,7 @@
         </div>
     </div>
 
-    <div class="character">
+    <div class="panel">
         <h1 style='color: plum'>Team Orchid</h1>
         
         <div class="character-details">
@@ -215,7 +146,7 @@
         </div>
     </div>    
 
-    <div class="character">
+    <div class="panel">
         <h1 style='color: black'>Ms. Body (Deceased)</h1>
         
         <div class="character-details">

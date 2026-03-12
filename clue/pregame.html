@@ -4,55 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pregame Information</title>
+    <link rel="stylesheet" href="/clue/clue/styles.css">
     <style>
-        body {
-            font-family: 'Georgia', serif;
-            background-color: #f9f5f0;
-            color: #333;
-            margin: 0;
-            padding: 20px 0; /* Adds spacing at the top and bottom */
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Aligns content to the top */
-            flex-direction: column;
-            gap: 20px; /* Adds spacing between sections */
-            min-height: 100vh;
-            box-sizing: border-box;
-
-            background-image: url('/clue/background.png'); /* Replace with your image URL */
-            background-size: cover; /* Stretches the image to cover the entire background */
-            background-repeat: no-repeat; /* Prevents tiling */
-            background-position: center; /* Ensures the image is centered */
-        }
-
-        .pregame {
-            background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            padding: 20px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .pregame h1 {
-            font-size: 2rem;
-            color: #6A3F47;
-            margin-bottom: 10px;
-        }
-
-        .pregame h2 {
-            font-size: 1.5rem;
-            color: #AF6A59;
-            margin: 10px 0;
-        }
-
-        .pregame p {
-            font-size: 1.2rem;
-            margin: 10px 0;
-        }
-
         .pregame a {
             color: #AF6A59;
             text-decoration: underline;
@@ -69,39 +22,11 @@
             margin: 20px 0;
             object-fit: cover;
         }
-
-
-        @media (max-width: 768px) {
-            .pregame {
-                padding: 15px;
-            }
-
-            .pregame h1 {
-                font-size: 1.8rem;
-            }
-
-            .pregame h2 {
-                font-size: 1.3rem;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="pregame">
-        <a href="/clue/index" style="
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            font-family: 'Georgia', serif;
-            font-size: 1rem;
-            color: #fff;
-            background-color: #6A3F47;
-            border-radius: 5px;
-            text-decoration: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease;
-        " onmouseover="this.style.backgroundColor='#AF6A59'"
-           onmouseout="this.style.backgroundColor='#6A3F47'">
+    <div class="panel pregame">
+        <a href="/clue/index" class="btn-nav">
            ← Back to Previous Page
         </a>
         
@@ -125,7 +50,7 @@
                 <i>Note: You can read this prior to the game starting, but it will spoil the fun of recieving it organically.</i>
             </p>
             <p>
-                You’ve been called to the manor by Inspector Noir to uncover the truth about Ms. Body' untimely death. Every guest has a role to play in solving the mystery. Review Inspector Noir’s invitation and prepare for the inquiry:
+                You've been called to the manor by Inspector Noir to uncover the truth about Ms. Body' untimely death. Every guest has a role to play in solving the mystery. Review Inspector Noir's invitation and prepare for the inquiry:
             </p>
             <ul>
                 <li><a href="/clue/letter">Read the Full Letter</a></li>
