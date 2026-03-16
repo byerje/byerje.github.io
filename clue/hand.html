@@ -94,9 +94,11 @@
 
         .card.fullscreen {
             position: fixed;
-            top: 20%; 
+            top: 50%;
             left: 50%;
-            transform: translate(-50%, -0) scale(2); /* Remove vertical adjustment */
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 400px;
             z-index: 1000;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
         }
@@ -200,6 +202,29 @@
         
         .toggle-qr:hover {
             background-color: #555;
+        }
+
+        .add-to-hand-btn {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1001;
+            padding: 14px 32px;
+            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            font-weight: bold;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            display: none;
+        }
+
+        .add-to-hand-btn:hover {
+            background-color: #45a049;
         }
        
         #add-card:hover {
@@ -354,6 +379,18 @@
         const overlay = document.createElement('div');
         overlay.className = 'overlay';
         document.body.appendChild(overlay);
+
+        const addToHandBtn = document.createElement('button');
+        addToHandBtn.className = 'add-to-hand-btn';
+        addToHandBtn.textContent = '✔ Add to Hand';
+        document.body.appendChild(addToHandBtn);
+
+        addToHandBtn.addEventListener('click', () => {
+            const fullscreenCard = document.querySelector('.card.fullscreen');
+            if (fullscreenCard) {
+                toggleFullscreen(fullscreenCard, false);
+            }
+        });
         
         function toggleFullscreen(card, select) {
             const isFullscreen = card.classList.contains('fullscreen');
@@ -376,6 +413,9 @@
                     image.classList.add('hidden');
                     qrCode.classList.remove('hidden');
                     label.classList.add('hidden');
+                } else {
+                    // Arriving from QR scan — show the Add to Hand button
+                    addToHandBtn.style.display = 'block';
                 }
     
             } 
@@ -388,6 +428,7 @@
                 card.classList.remove('fullscreen');
                 overlay.classList.remove('active');
                 label.classList.remove('hidden');
+                addToHandBtn.style.display = 'none';
                 
                 Array.from(handDiv.children).forEach(container => container.classList.remove('hidden'));
 
