@@ -205,27 +205,7 @@
         }
 
         .add-to-hand-btn {
-            position: fixed;
-            bottom: max(60px, env(safe-area-inset-bottom, 0px) + 60px);
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1002;
-            padding: 16px 36px;
-            font-family: 'Georgia', serif;
-            font-size: 1.2rem;
-            font-weight: bold;
-            background-color: #4CAF50;
-            color: white;
-            border: 4px solid white;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
             display: none;
-            white-space: nowrap;
-        }
-
-        .add-to-hand-btn:hover, .add-to-hand-btn:active {
-            background-color: #45a049;
         }
        
         #add-card:hover {
@@ -381,26 +361,6 @@
         overlay.className = 'overlay';
         document.body.appendChild(overlay);
 
-        const addToHandBtn = document.createElement('button');
-        addToHandBtn.className = 'add-to-hand-btn';
-        addToHandBtn.textContent = '✔ Add to Hand';
-        document.body.appendChild(addToHandBtn);
-
-        addToHandBtn.addEventListener('click', () => {
-            const fullscreenCard = document.querySelector('.card.fullscreen');
-            if (fullscreenCard) {
-                toggleFullscreen(fullscreenCard, false);
-            }
-        });
-
-        addToHandBtn.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            const fullscreenCard = document.querySelector('.card.fullscreen');
-            if (fullscreenCard) {
-                toggleFullscreen(fullscreenCard, false);
-            }
-        }, { passive: false });
-        
         function toggleFullscreen(card, select) {
             const isFullscreen = card.classList.contains('fullscreen');
             const image = card.querySelector('.card-image');
@@ -408,7 +368,6 @@
             const label = card.querySelector('.card-label');
         
             if (!isFullscreen) {
-                // Enter fullscreen mode
                 card.classList.add('fullscreen');
                 overlay.classList.add('active');
                 Array.from(handDiv.children).forEach(container => {
@@ -422,9 +381,6 @@
                     image.classList.add('hidden');
                     qrCode.classList.remove('hidden');
                     label.classList.add('hidden');
-                } else {
-                    // Arriving from QR scan — show the Add to Hand button
-                    addToHandBtn.style.display = 'block';
                 }
     
             } 
@@ -437,17 +393,11 @@
                 card.classList.remove('fullscreen');
                 overlay.classList.remove('active');
                 label.classList.remove('hidden');
-                addToHandBtn.style.display = 'none';
                 
                 Array.from(handDiv.children).forEach(container => container.classList.remove('hidden'));
 
                 checkHandEmpty();
             }
-        }
-
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
         }
 
         homeButton.addEventListener('click', () => {
@@ -495,12 +445,6 @@
         window.addEventListener('DOMContentLoaded', () => {
             loadHand();
             applyFilter('all');
-
-            // Get the card name from the query parameter
-            const cardName = getQueryParam('card');
-            if (cardName) {
-                addCardToHand(cardName, true); // Add and select the card
-            }
         });
         
 

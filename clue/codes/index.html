@@ -113,10 +113,10 @@
                 qrItem.className = 'qr-item';
 
                 qrItem.innerHTML = `
-                    <a href='/clue/hand?card=${item}'>
+                    <a href='/clue/card?card=${item}'>
                         <img src="/clue/codes/${item.toLowerCase().replace(/ /g, '')}.png" alt="${item} QR Code">
                     </a>
-                    <div class="label"><a href='/clue/hand?card=${item}'>${item}</a></div>
+                    <div class="label"><a href='/clue/card?card=${item}'>${item}</a></div>
                 `;
 
                 qrList.appendChild(qrItem);

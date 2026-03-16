@@ -117,50 +117,50 @@
             }
         }
 
-        // Extract the "card" query parameter from a URL
-        function getCardFromUrl(url) {
+        // Extract card name from a QR code URL like:
+        // https://byerje.github.io/clue/cards/dagger.jpg  -> "dagger"
+        // or a legacy ?card=Dagger query param URL
+        function getCardSlugFromUrl(url) {
             try {
                 const parsedUrl = new URL(url);
-                return parsedUrl.searchParams.get("card");
+                // Legacy format: ?card=Dagger
+                const param = parsedUrl.searchParams.get("card");
+                if (param) return param;
+                // Image URL format: /clue/cards/<slug>.jpg
+                const match = parsedUrl.pathname.match(/\/clue\/cards\/([^/.]+)\.jpg$/i);
+                if (match) return match[1];
             } catch {
-                return null; // Return null if the URL is invalid or doesn't contain the parameter
+                // not a valid URL
             }
+            return null;
         }
 
         // QR Code scanning function
         function scanQRCode() {
             if (!scanning) return;
 
-            // Set canvas dimensions to match the video feed
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
-
-            // Draw the current video frame on the canvas
             context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-            // Extract image data from the canvas
             const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-
-            // Decode QR code using jsQR
             const qrCode = jsQR(imageData.data, canvas.width, canvas.height);
 
             if (qrCode) {
-                console.log("QR Code Data:", qrCode.data);
-                window.location.href = qrCode.data;
-
-                // Update the text box with the scanned URL
+                scanning = false;
                 urlInput.value = qrCode.data;
+                statusDiv.textContent = "QR Code detected. Redirecting...";
 
-                // Extract the card value and display it
-                const card = getCardFromUrl(qrCode.data);
-                cardDisplay.textContent = `Card: ${card || "None"}`;
-                statusDiv.textContent = "QR Code detected. URL updated.";
+                const slug = getCardSlugFromUrl(qrCode.data);
+                if (slug) {
+                    window.location.href = `/clue/card?card=${encodeURIComponent(slug)}`;
+                } else {
+                    // Fallback: go to scanned URL directly
+                    window.location.href = qrCode.data;
+                }
             } else {
                 statusDiv.textContent = "Scanning for QR codes...";
+                requestAnimationFrame(scanQRCode);
             }
-
-            // Keep scanning
-            requestAnimationFrame(scanQRCode);
         }
 
         // Navigate to the URL on button click
