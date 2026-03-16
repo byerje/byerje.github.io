@@ -43,6 +43,7 @@
         }
 
         #add-btn {
+            display: none;
             padding: 18px 48px;
             font-family: 'Georgia', serif;
             font-size: 1.3rem;
@@ -53,8 +54,9 @@
             border-radius: 12px;
             cursor: pointer;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-            display: none;
             -webkit-tap-highlight-color: transparent;
+            text-decoration: none;
+            text-align: center;
         }
 
         #add-btn:active {
@@ -86,6 +88,8 @@
             border-radius: 8px;
             cursor: pointer;
             -webkit-tap-highlight-color: transparent;
+            text-decoration: none;
+            text-align: center;
         }
 
         #back-btn:active {
@@ -98,8 +102,8 @@
     <img id="card-image" alt="Card">
     <div id="error-msg">Unknown card. Please scan again.</div>
     <div id="already-msg">Already in your hand!</div>
-    <button id="add-btn">? Add to Hand</button>
-    <button id="back-btn">? Back to Hand</button>
+    <a id="add-btn" href="/clue/hand">Add to Hand</a>
+    <a id="back-btn" href="/clue/hand">Card already in Hand</a>
 
     <script>
         const data = {
@@ -141,26 +145,14 @@
             }
         }
 
-        function addToHand() {
+        // Save card to localStorage before the link navigates away
+        addBtn.addEventListener('click', () => {
             if (!validName) return;
             const hand = JSON.parse(localStorage.getItem('playerHand')) || [];
             if (!hand.map(c => c.toLowerCase()).includes(validName.toLowerCase())) {
                 hand.push(validName);
                 localStorage.setItem('playerHand', JSON.stringify(hand));
             }
-            window.location.href = '/clue/hand';
-        }
-
-        addBtn.addEventListener('click', addToHand);
-        addBtn.addEventListener('touchend', (e) => {
-            e.preventDefault();
-            addToHand();
-        });
-
-        backBtn.addEventListener('click', () => { window.location.href = '/clue/hand'; });
-        backBtn.addEventListener('touchend', (e) => {
-            e.preventDefault();
-            window.location.href = '/clue/hand';
         });
     </script>
 </body>
