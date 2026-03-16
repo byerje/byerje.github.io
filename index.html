@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murder Mystery Games</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f9f5f0;
+            color: #333;
+            margin: 0;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .invitation {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .invitation h1 {
+            font-size: 2.5rem;
+            color: #6A3F47;
+            margin-bottom: 10px;
+        }
+
+        .invitation p {
+            font-size: 1.2rem;
+            margin: 10px 0 30px 0;
+            color: #555;
+        }
+
+        .game-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .game-menu li {
+            margin: 15px 0;
+        }
+
+        .game-menu a {
+            font-size: 1.4rem;
+            color: #6A3F47;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .game-menu a:hover {
+            color: #AF6A59;
+            border-bottom-color: #AF6A59;
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation">
+        <h1>Murder Mystery Games</h1>
+        <p>Choose a game to begin:</p>
+        <ul class="game-menu">
+            <li><a href="/byermanor/">Byer Manor</a></li>
+            <li><a href="/clue/">Clue-like Mystery</a></li>
+            <li><a href="/hinesmansion/">Hines Mansion</a></li>
+        </ul>
+    </div>
+</body>
+</html>
