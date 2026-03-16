@@ -206,24 +206,25 @@
 
         .add-to-hand-btn {
             position: fixed;
-            bottom: 40px;
+            bottom: max(60px, env(safe-area-inset-bottom, 0px) + 60px);
             left: 50%;
             transform: translateX(-50%);
-            z-index: 1001;
-            padding: 14px 32px;
+            z-index: 1002;
+            padding: 16px 36px;
             font-family: 'Georgia', serif;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: bold;
             background-color: #4CAF50;
             color: white;
-            border: none;
-            border-radius: 8px;
+            border: 4px solid white;
+            border-radius: 10px;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
             display: none;
+            white-space: nowrap;
         }
 
-        .add-to-hand-btn:hover {
+        .add-to-hand-btn:hover, .add-to-hand-btn:active {
             background-color: #45a049;
         }
        
@@ -391,6 +392,14 @@
                 toggleFullscreen(fullscreenCard, false);
             }
         });
+
+        addToHandBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            const fullscreenCard = document.querySelector('.card.fullscreen');
+            if (fullscreenCard) {
+                toggleFullscreen(fullscreenCard, false);
+            }
+        }, { passive: false });
         
         function toggleFullscreen(card, select) {
             const isFullscreen = card.classList.contains('fullscreen');
