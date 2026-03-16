@@ -290,7 +290,9 @@
         }
 
         function saveHand() {
-            const cards = Array.from(handDiv.children).map(container => container.dataset.name);
+            const cards = Array.from(handDiv.children)
+                .filter(container => container.classList.contains('card-container'))
+                .map(container => container.dataset.name);
             localStorage.setItem('playerHand', JSON.stringify(cards));
             checkHandEmpty();
         }
@@ -340,7 +342,8 @@
             const removeButton = document.createElement('button');
             removeButton.className = 'remove-button';
             removeButton.textContent = 'Remove Card';
-            removeButton.addEventListener('click', () => {
+            removeButton.addEventListener('click', (e) => {
+                e.stopPropagation();
                 cardContainer.remove();
                 saveHand();
             });

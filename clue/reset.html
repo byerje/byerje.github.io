@@ -7,8 +7,16 @@
 </head>
 <body>
     <script>
-      localStorage.clear();
-      window.location.href='/clue/hand'
+      localStorage.removeItem('playerHand');
+      localStorage.removeItem('playerName');
+      localStorage.removeItem('motives');
+      // Verify storage was cleared before navigating
+      if (!localStorage.getItem('playerHand')) {
+          window.location.replace('/clue/hand');
+      } else {
+          localStorage.clear();
+          window.location.replace('/clue/hand');
+      }
     </script>
 </body>
 </html>
