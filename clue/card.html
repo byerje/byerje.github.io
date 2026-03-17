@@ -79,6 +79,7 @@
         }
 
         #back-btn {
+            display: none;
             padding: 12px 32px;
             font-family: 'Georgia', serif;
             font-size: 1rem;
@@ -140,6 +141,7 @@
             const hand = JSON.parse(localStorage.getItem('playerHand')) || [];
             if (hand.map(c => c.toLowerCase()).includes(validName.toLowerCase())) {
                 alreadyMsg.style.display = 'block';
+                backBtn.style.display = 'block';
             } else {
                 addBtn.style.display = 'block';
             }
