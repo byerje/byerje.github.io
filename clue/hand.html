@@ -300,10 +300,11 @@
         function addCardToHand(name, select) {
             if (!name) return; // Exit if name is invalid
 
-            // Find the card name in the data (case-insensitive)
+            // Find the card name in the data (case-insensitive, ignoring spaces)
+            const nameSlug = name.toLowerCase().replace(/ /g, '');
             const validName = Object.values(data)
                 .flat() // Combine all categories into one array
-                .find(item => item.toLowerCase() === name.toLowerCase());
+                .find(item => item.toLowerCase().replace(/ /g, '') === nameSlug);
         
             if (!validName) {
                 return false; // Exit if the name is not valid

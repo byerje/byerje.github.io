@@ -127,7 +127,8 @@
         }
 
         const rawName = getQueryParam('card');
-        const validName = allCards.find(c => c.toLowerCase() === (rawName || '').toLowerCase());
+        const rawSlug = (rawName || '').toLowerCase().replace(/ /g, '');
+        const validName = allCards.find(c => c.toLowerCase().replace(/ /g, '') === rawSlug);
 
         if (!validName) {
             errorMsg.style.display = 'block';
