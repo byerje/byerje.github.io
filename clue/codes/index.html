@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code List</title>
     <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         body {
             font-family: 'Georgia', serif;
             background-color: #f9f5f0;
@@ -23,6 +28,7 @@
             background-size: cover; /* Stretches the image to cover the entire background */
             background-repeat: no-repeat; /* Prevents tiling */
             background-position: center; /* Ensures the image is centered */
+            animation: fadeIn 0.4s ease-in;
         }
 
         h1 {
