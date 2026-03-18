@@ -4,10 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code List</title>
-    <link rel="stylesheet" href="/clue/clue/styles.css">
     <style>
         body {
+            font-family: 'Georgia', serif;
+            background-color: #f9f5f0;
+            color: #333;
+            margin: 0;
+            padding: 20px 0; /* Adds spacing at the top and bottom */
+            display: flex;
+            justify-content: center;
             align-items: center;
+            flex-direction: column;
+            gap: 20px; /* Adds spacing between sections */
+            min-height: 100vh;
+            box-sizing: border-box;
+
+            background-image: url('/clue/background.png'); /* Replace with your image URL */
+            background-size: cover; /* Stretches the image to cover the entire background */
+            background-repeat: no-repeat; /* Prevents tiling */
+            background-position: center; /* Ensures the image is centered */
         }
 
         h1 {
@@ -36,9 +51,9 @@
 
         .qr-list {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
+            flex-wrap: wrap; /* Allows items to wrap to the next row */
+            gap: 20px; /* Adds spacing between items */
+            justify-content: center; /* Centers the items in the container */
             width: 100%;
         }
 
@@ -67,20 +82,54 @@
         }
 
         a {
-            text-decoration: none;
-            color: inherit;
+            text-decoration: none; /* Remove the underline */
+            color: inherit; /* Use the current text color of the parent element */
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 767px;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
     <div class="category">
         <div class="button-container">
-            <a href="/clue/cardadd" class="btn-nav">
+            <a href="/clue/cardadd" style="
+                display: inline-block;
+                padding: 10px 20px;
+                margin: 10px;
+                font-family: 'Georgia', serif;
+                font-size: 1rem;
+                color: #fff;
+                background-color: #6A3F47;
+                border-radius: 5px;
+                text-decoration: none;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: background-color 0.3s ease;
+                " onmouseover="this.style.backgroundColor='#AF6A59'"
+                onmouseout="this.style.backgroundColor='#6A3F47'">
                 ← Back to Previous Page
             </a>
 
             <!-- Print Button -->
-            <button onclick="window.print()" class="btn-nav">
+            <button onclick="window.print()" style="
+                display: inline-block;
+                padding: 10px 20px;
+                margin: 10px;
+                font-family: 'Georgia', serif;
+                font-size: 1rem;
+                color: #fff;
+                background-color: #6A3F47;
+                border-radius: 5px;
+                text-decoration: none;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: background-color 0.3s ease;
+                " onmouseover="this.style.backgroundColor='#AF6A59'"
+                onmouseout="this.style.backgroundColor='#6A3F47'">
                 Print Page
             </button>    
         </div>
@@ -97,14 +146,19 @@
 
         const categoriesContainer = document.getElementById('categories');
 
+        // Generate QR code sections by category
         for (const [category, items] of Object.entries(data)) {
+            // Sort items alphabetically
             const sortedItems = items.sort((a, b) => a.localeCompare(b));
 
+            // Create a section for each category
             const categoryDiv = document.createElement('div');
             categoryDiv.className = 'category';
 
+            // Add category title
             categoryDiv.innerHTML = `<h2>${category.charAt(0).toUpperCase() + category.slice(1)}</h2>`;
 
+            // Add QR code list
             const qrList = document.createElement('div');
             qrList.className = 'qr-list';
 
